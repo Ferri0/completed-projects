@@ -1,0 +1,17 @@
+// abstracts
+@import "./abstracts/constants"; // clear this
+@import "./abstracts/mixins";
+
+// base
+@import "./base/base"; // clear this
+@import "./base/normalize";
+
+// components
+@import "./components/fullScreenBtn"; // i will delete this. Added as example
+@import "./components/graph"; // i will delete this. Added as example
+@import "./components/map"; // i will delete this. Added as example
+@import "./components/statColumn"; // i will delete this. Added as example
+
+// layouts
+@import "./layouts/header"; // i will delete this. Added as example
+@import "./layouts/main"; // i will delete this. Added as example
