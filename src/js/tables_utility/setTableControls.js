@@ -87,13 +87,13 @@ export default function (table) {
   // append controls block to table depends on arg passed in
   if (table === "casesTable") {
     const casesTable = document.querySelector(".stats__table--cases");
-    casesTable.append(statsControls);
+    casesTable.parentElement.append(statsControls);
   } else if (table === "deathsTable") {
     const deathsTable = document.querySelector(".stats__table--deaths");
-    deathsTable.append(statsControls);
+    deathsTable.parentElement.append(statsControls);
   } else if (table === "recoveredTable") {
     const recoveredTable = document.querySelector(".stats__table--recovered");
-    recoveredTable.append(statsControls);
+    recoveredTable.parentElement.append(statsControls);
   } else {
     throw new Error("wrong argument passed in setTableControls func");
   }

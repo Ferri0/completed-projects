@@ -6,9 +6,9 @@ import setTable from "./tables_utility/setTable";
 import setTableControls from "./tables_utility/setTableControls";
 
 setTable("casesTable");
-setTable("deathsTable");
-setTable("recoveredTable");
+// setTable("deathsTable");
+// setTable("recoveredTable");
 
 setTableControls("casesTable");
-setTableControls("deathsTable");
-setTableControls("recoveredTable");
+// setTableControls("deathsTable");
+// setTableControls("recoveredTable");
