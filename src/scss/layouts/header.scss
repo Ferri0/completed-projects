@@ -1,0 +1,7 @@
+.header {
+  @include size(100%, 150px);
+  @include flex(row, space-between, center);
+  margin-bottom: $margin;
+  background-color: $colorBlockBg;
+  border: $border;
+}

@@ -3,7 +3,7 @@
   @include size(100%, 700px);
   @include flex(column, center, center);
   margin-bottom: $margin;
-  border: 0.5px solid $colorBorder;
+  border: $border;
 }
 
 /*--------------- stats counter block ----------------*/
@@ -11,7 +11,7 @@
   @include size(100%, 100px);
   @include flex(column, center, center);
   text-align: center;
-  background-color: $colorTableBg;
+  background-color: $colorBlockBg;
   color: $colorTableTxt;
 
   // title
@@ -63,7 +63,7 @@
   @include size(100%, 50px);
   @include flex(row, center, center);
   text-align: center;
-  background-color: $colorTableBg;
+  background-color: $colorBlockBg;
   color: $colorTableTxt;
 
   div {
