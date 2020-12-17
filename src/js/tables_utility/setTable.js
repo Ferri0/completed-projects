@@ -9,14 +9,14 @@ export default function (tableClass) {
       field: "country",
       sortable: true,
       lockPosition: true,
-      width: 160,
+      width: "50%",
     },
     {
       headerName: "Cases",
       field: "cases",
       sortable: true,
       lockPosition: true,
-      width: 140,
+      width: "50%",
     },
   ];
 

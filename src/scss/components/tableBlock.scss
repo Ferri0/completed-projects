@@ -1,9 +1,9 @@
 /*--------------- stats block ----------------*/
 .stats {
-  @include size(310px, 700px);
+  @include size(100%, 700px);
   @include flex(column, center, center);
+  margin-bottom: $margin;
   border: 0.5px solid $colorBorder;
-  margin: 10px;
 }
 
 /*--------------- stats counter block ----------------*/
