@@ -62,6 +62,7 @@ export default function (table) {
     else if (table === "recoveredTable")
       properties.recoveredTable.units = "absolute";
     else throw new Error("wrong argument passed in setTableControls func");
+    console.log(properties);
   });
 
   // set right button (pagination + change properties)
@@ -77,6 +78,7 @@ export default function (table) {
     else if (table === "recoveredTable")
       properties.recoveredTable.units = "relative";
     else throw new Error("wrong argument passed in setTableControls func");
+    console.log(properties);
   });
 
   // append all inner blocks to controls block

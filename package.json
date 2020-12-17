@@ -4,6 +4,7 @@
   "description": "My webpack project",
   "main": "index.js",
   "scripts": {
+    "eslint": "eslint \"./**/*.js\"",
     "fix": "eslint --fix **/*.js --ignore-pattern node_modules/",
     "build": "webpack --mode development",
     "buildProd": "webpack --mode production"
