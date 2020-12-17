@@ -22,6 +22,7 @@
         "no-process-exit": "off",
         "object-shorthand": "off",
         "class-methods-use-this": "off",
-        "no-constant-condition": "off"
+        "no-constant-condition": "off",
+        "no-new": "off"
     }
 }

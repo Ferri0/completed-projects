@@ -50,5 +50,8 @@
     "url-loader": "4.1.1",
     "webpack": "^5.10.1",
     "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "ag-grid-community": "^24.1.0"
   }
 }
