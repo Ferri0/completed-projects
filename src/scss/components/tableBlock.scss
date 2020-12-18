@@ -4,6 +4,26 @@
   @include flex(column, center, center);
   margin-bottom: $margin;
   border: $border;
+
+  @media (min-width: 630px) {
+    @include size(calc(50% - 5px), 700px);
+
+    &:first-child {
+      margin-right: $margin;
+    }
+  }
+
+  @media (min-width: 940px) {
+    @include size(calc(33.3% - 7px), 700px);
+
+    &:first-child {
+      margin-right: $margin;
+    }
+
+    &:nth-child(2) {
+      margin-right: $margin;
+    }
+  }
 }
 
 /*--------------- stats counter block ----------------*/

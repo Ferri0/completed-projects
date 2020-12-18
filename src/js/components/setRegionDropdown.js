@@ -32,7 +32,7 @@ export default function () {
       ],
       autocomplete: true,
       lazyLoading: true,
-      width: "50%",
+      width: "100%",
       // change properties when dropdown menu close (on each change of value)
       onclose: function () {
         properties.region = regionDropdown.getValue();
@@ -55,7 +55,7 @@ export default function () {
       data: ["All time", "Last day"],
       autocomplete: true,
       lazyLoading: true,
-      width: "50%",
+      width: "100%",
       // change properties when dropdown menu close (on each change of value)
       onclose: function () {
         properties.period = periodDropdown.getValue();
