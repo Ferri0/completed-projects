@@ -3,11 +3,11 @@ import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine-dark.css";
 import "../scss/style.scss";
 
-import setRegionDropdown from "./components/setRegionDropdown";
+import setDropdowns from "./components/setDropdowns";
 import setTable from "./tables_utility/setTable";
 import setTableControls from "./tables_utility/setTableControls";
 
-setRegionDropdown();
+setDropdowns();
 
 setTable("casesTable");
 setTable("deathsTable");
