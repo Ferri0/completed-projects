@@ -16,3 +16,7 @@ setTable("recoveredTable");
 setTableControls("casesTable");
 setTableControls("deathsTable");
 setTableControls("recoveredTable");
+
+window.onresize = function () {
+  location.reload();
+}

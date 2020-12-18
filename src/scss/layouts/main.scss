@@ -3,7 +3,7 @@
   @include flex(column, center, flex-start);
 
   @media (min-width: 630px) {
-    @include flex(row, center, flex-start);
+    @include flex(row, center, center);
     flex-wrap: wrap;
   }
 }

@@ -1,18 +1,28 @@
 .graph {
-  @include size(100%, calc(100vw - 20px));
+  @include size(calc(100vw - 20px), calc(50vh));
   margin-bottom: $margin;
   border: $border;
   text-align: center;
   font-size: $sizeTableFont;
   color: $colorTableTxt;
   background-color: $colorBlockBg;
+  // margin-right: $margin;
 
-  @media (min-width: 1400px) {
+  @media (min-width: 630px) {
+    @include size(calc(50vw - 15px), calc(50vw - 15px));
+  }
+
+  // @media (max-width: 940px) {
+  //   @include size(calc(100vw - 20px), calc(50vh));
+  //   margin-right: 0;
+  // }
+
+  @media (min-width: 1400px) and (min-height: 960px) {
     order: 4;
-    height: calc(50vh - 110px);
+    height: calc(30vh - 9px);
     width: 610px;
     position: absolute;
-    bottom: 110px;
+    bottom: 107px;
     right: 10px;
   }
 }
