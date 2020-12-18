@@ -4,6 +4,7 @@
   @include flex(column, center, center);
   margin-bottom: $margin;
   border: $border;
+  position: relative;
 
   @media (min-width: 630px) {
     @include size(calc(50% - 5px), 470px);
@@ -28,9 +29,14 @@
     &:nth-child(2) {
       margin-right: $margin;
     }
+
+    &:nth-child(3) {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
   }
 
-  @media (min-width: 1400px) and (min-height: 960px) {
+  @media (min-width: 1400px) {
     &:nth-child(1) {
       @include size(300px, calc(100vh - 240px));
       margin-right: $margin;
@@ -48,6 +54,19 @@
       order: 3;
     }
   }
+}
+
+.stats__full-screen-btn {
+  @include size(20px, 20px);
+  z-index: 10; // z-index to show over the table
+  background-color: red;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.stats__full-screen {
+  @include size(calc(100vw - 20px), calc(100vh - 240px));
 }
 
 /*--------------- stats counter block ----------------*/
@@ -84,20 +103,24 @@
 .stats__table {
   @include size(100%, 350px);
 
+  @media (min-width: 940px) {
+    @include size(100%, 555px);
+  }
+
   &--cases {
-    @media (min-width: 1400px) and (min-height: 960px) {
+    @media (min-width: 1400px) {
       @include size(300px, calc(100vh - 390px));
     }
   }
 
   &--deaths {
-    @media (min-width: 1400px) and (min-height: 960px) {
+    @media (min-width: 1400px) {
       @include size(300px, calc(70vh - 390px));
     }
   }
 
   &--recovered {
-    @media (min-width: 1400px) and (min-height: 960px) {
+    @media (min-width: 1400px) {
       @include size(300px, calc(70vh - 390px));
     }
   }

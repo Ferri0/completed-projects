@@ -6,19 +6,14 @@
   font-size: $sizeTableFont;
   color: $colorTableTxt;
   background-color: $colorBlockBg;
-  // margin-right: $margin;
+  max-height: 75vh;
 
   @media (min-width: 630px) {
-    @include size(calc(50vw - 15px), calc(50vw - 15px));
+    @include size(calc(50vw - 17px), calc(50vw - 20px));
     margin-right: 10px;
   }
 
-  // @media (max-width: 940px) {
-  //   @include size(calc(100vw - 20px), calc(50vh));
-  //   margin-right: 0;
-  // }
-
-  @media (min-width: 1400px) and (min-height: 960px) {
+  @media (min-width: 1400px) {
     width: calc(100% - 930px);
     height: calc(100vw - 950px);
     margin-right: $margin;

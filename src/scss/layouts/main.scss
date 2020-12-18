@@ -6,4 +6,9 @@
     @include flex(row, center, center);
     flex-wrap: wrap;
   }
+
+  @media (min-width: 940px) {
+    @include flex(row, center, flex-start);
+    flex-wrap: wrap;
+  }
 }
