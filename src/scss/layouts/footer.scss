@@ -1,0 +1,18 @@
+.footer {
+  @include size(100%, 150px);
+  @include flex(row, space-between, center);
+  background-color: $colorBlockBg;
+  border: $border;
+  padding: $padding;
+  font-size: $sizeTableFont;
+  color: $colorTableTxt;
+}
+
+.footer__rss-logo {
+  filter: invert(1);
+  height: 50px;
+}
+
+.footer__created-by {
+  @include flex(column, center, flex-start);
+}
