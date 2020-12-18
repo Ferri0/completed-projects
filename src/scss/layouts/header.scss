@@ -1,7 +1,19 @@
 .header {
   @include size(100%, 150px);
-  @include flex(row, space-between, center);
+  @include flex(column, space-between, center);
   margin-bottom: $margin;
   background-color: $colorBlockBg;
   border: $border;
+  padding: $padding;
+}
+
+.header__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: $colorTableTxt;
+}
+
+.header__dropdowns-block {
+  height: 70px;
+  @include flex(column, space-between, center);
 }

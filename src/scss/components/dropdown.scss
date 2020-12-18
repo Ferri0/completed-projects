@@ -1,0 +1,39 @@
+// .dropdown {
+//   height: 70px;
+// }
+
+.jdropdown-container {
+  outline: none;
+}
+
+.jdropdown-container-header {
+  background-color: $colorBlockBg !important;
+}
+
+.jdropdown-header {
+  color: $colorTableTxt !important;
+  background-color: $colorBlockBg !important;
+  border: $border !important;
+  font-size: 1.4rem !important;
+  padding-left: $padding !important;
+}
+
+.jdropdown-searchbar.jdropdown-focus {
+  background-color: $colorBlockBg !important;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.jdropdown-close {
+  font-size: 0.9rem !important;
+  color: $colorTableTxt !important;
+}
+
+.jdropdown-item {
+  color: $colorTableTxt !important;
+  font-size: 1.4rem !important;
+  background-color: $colorBlockBg !important;
+  border-bottom: $border !important;
+}

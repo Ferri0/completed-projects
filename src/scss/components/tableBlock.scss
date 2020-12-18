@@ -41,6 +41,7 @@
   @include size(100%, 555px);
 
   div {
+    overflow-x: hidden;
     font-size: $sizeTableFont;
   }
 

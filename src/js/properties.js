@@ -1,4 +1,6 @@
 export default {
+  region: "World",
+  period: "All time",
   casesTable: {
     units: "absolute",
   },

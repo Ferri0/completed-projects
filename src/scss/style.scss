@@ -8,6 +8,11 @@
 
 //components
 @import "./components/tableBlock.scss";
+@import "./components/dropdown.scss";
+@import "./components/map.scss";
+@import "./components/graph.scss";
 
 // layouts
 @import "./layouts/header.scss";
+@import "./layouts/main.scss";
+@import "./layouts/footer.scss";

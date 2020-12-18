@@ -1,0 +1,9 @@
+.map {
+  @include size(100%, calc(100vw - 20px));
+  margin-bottom: $margin;
+  border: $border;
+  text-align: center;
+  font-size: $sizeTableFont;
+  color: $colorTableTxt;
+  background-color: $colorBlockBg;
+}
