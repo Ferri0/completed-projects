@@ -1,9 +1,9 @@
 .main {
   @include size(100%, auto);
-  @include flex(column, center, center);
+  @include flex(column, center, flex-start);
 
   @media (min-width: 630px) {
-    @include flex(row, center, center);
+    @include flex(row, center, flex-start);
     flex-wrap: wrap;
   }
 }

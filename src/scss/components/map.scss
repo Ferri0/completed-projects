@@ -6,4 +6,12 @@
   font-size: $sizeTableFont;
   color: $colorTableTxt;
   background-color: $colorBlockBg;
+
+  @media (min-width: 1400px) {
+    width: calc(100% - 930px);
+    height: calc(100vw - 950px);
+    margin-right: $margin;
+    order: 1;
+    max-height: calc(100vh - 240px);
+  }
 }

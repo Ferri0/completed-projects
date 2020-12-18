@@ -24,6 +24,26 @@
       margin-right: $margin;
     }
   }
+
+  @media (min-width: 1400px) {
+    @include size(300px, 700px);
+
+    &:nth-child(1) {
+      margin-right: $margin;
+      order: 0;
+    }
+
+    &:nth-child(2) {
+      margin-right: $margin;
+      order: 2;
+      // height: calc(50vh - 110px);
+    }
+
+    &:nth-child(3) {
+      order: 3;
+      // height: calc(50vh - 110px);
+    }
+  }
 }
 
 /*--------------- stats counter block ----------------*/

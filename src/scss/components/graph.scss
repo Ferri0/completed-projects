@@ -6,4 +6,13 @@
   font-size: $sizeTableFont;
   color: $colorTableTxt;
   background-color: $colorBlockBg;
+
+  @media (min-width: 1400px) {
+    order: 4;
+    height: calc(50vh - 110px);
+    width: 610px;
+    position: absolute;
+    bottom: 110px;
+    right: 10px;
+  }
 }
