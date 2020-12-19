@@ -1,0 +1,24 @@
+.last-update {
+  @include size(300px, 100px);
+  @include flex(column, center, center);
+  border: $border;
+  background-color: $colorBlockBg;
+  color: $colorTableTxt;
+  text-align: center;
+
+  // title
+  &--title {
+    font-size: $sizeCounterTitle;
+  }
+
+  // date
+  &--date {
+    font-size: $sizeCounterNum;
+  }
+
+  @media (min-width: 1400px) {
+    position: absolute;
+    bottom: 120px;
+    left: 10px;
+  }
+}

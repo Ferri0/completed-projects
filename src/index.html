@@ -9,6 +9,7 @@
   <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
 </head>
 <body>
+
   <!-- header -->
   <header class="header">
     <h1 class="header__title">COVID-19 Dashboard</h1>
@@ -17,6 +18,7 @@
       <div id="period-dropdown" class="dropdown"></div>
     </div>
   </header>
+
   <!-- main -->
   <main class="main">
     <!-- cases block -->
@@ -27,6 +29,7 @@
       </div>
       <div class="stats__table stats__table--cases ag-theme-alpine-dark"></div>
     </div>
+
     <!-- deaths block -->
     <div class="stats">
       <div class="stats__count">
@@ -35,6 +38,7 @@
       </div>
       <div class="stats__table stats__table--deaths ag-theme-alpine-dark"></div>
     </div>
+
     <!-- recovered block -->
     <div class="stats">
       <div class="stats__count">
@@ -43,17 +47,26 @@
       </div>
       <div class="stats__table stats__table--recovered ag-theme-alpine-dark"></div>
     </div>
+
+    <!-- last-updated block -->
+    <div class="last-update">
+      <span class="last-update--title">Last update:</span>
+      <span class="last-update--date">19.12.2020</span>
+    </div>
+
     <!-- map block -->
     <div class="map">
       map block<br>
       styles in scss/components/map.scss<br>
     </div>
+
     <!-- graph block -->
     <div class="graph">
       graph block<br>
       styles in scss/components/graph.scss<br>
     </div>
   </main>
+
   <!-- footer -->
   <footer class="footer">
     <div class="footer__created-by">

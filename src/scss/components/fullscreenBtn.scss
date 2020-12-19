@@ -21,4 +21,9 @@
     filter: brightness(1.3);
     transform: scale(1.05);
   }
+
+  // hide button in last-update block
+  .last-update & {
+    display: none;
+  }
 }

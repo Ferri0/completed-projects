@@ -39,7 +39,10 @@
 
   @media (min-width: 1400px) {
     &:nth-child(1) {
-      @include size(300px, calc(100vh - 240px));
+      @include size(
+        300px,
+        calc(100vh - 350px)
+      ); // 100 footer || 100 header || 50 margins || 100 update-time
       margin-right: $margin;
       order: 0;
     }
