@@ -6,6 +6,7 @@ import "../scss/style.scss";
 import setDropdowns from "./components/setDropdowns";
 import setTable from "./tables_utility/setTable";
 import setTableControls from "./tables_utility/setTableControls";
+import setFullScrBtns from "./components/setFullScrBtns";
 
 setDropdowns();
 
@@ -17,6 +18,4 @@ setTableControls("casesTable");
 setTableControls("deathsTable");
 setTableControls("recoveredTable");
 
-window.onresize = function () {
-  location.reload();
-}
+setFullScrBtns();

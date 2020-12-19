@@ -6,13 +6,6 @@ import properties from "../properties";
  */
 
 export default function (table) {
-  // create and set full screen button
-  const fullScreenButton = document.createElement("div");
-  fullScreenButton.classList.add("stats__full-screen-btn");
-  fullScreenButton.addEventListener("click", () => {
-    fullScreenButton.parentElement.classList.toggle("stats__full-screen");
-  });
-
   // create controls block
   const statsControls = document.createElement("div");
   statsControls.classList.add("stats__controls");
@@ -95,15 +88,12 @@ export default function (table) {
   if (table === "casesTable") {
     const casesTable = document.querySelector(".stats__table--cases");
     casesTable.parentElement.append(statsControls);
-    casesTable.parentElement.prepend(fullScreenButton);
   } else if (table === "deathsTable") {
     const deathsTable = document.querySelector(".stats__table--deaths");
     deathsTable.parentElement.append(statsControls);
-    deathsTable.parentElement.prepend(fullScreenButton);
   } else if (table === "recoveredTable") {
     const recoveredTable = document.querySelector(".stats__table--recovered");
     recoveredTable.parentElement.append(statsControls);
-    recoveredTable.parentElement.prepend(fullScreenButton);
   } else {
     throw new Error("wrong argument passed in setTableControls func");
   }

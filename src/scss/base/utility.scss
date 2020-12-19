@@ -1,0 +1,19 @@
+// for elemnts in main block
+.full-screen-mode {
+  width: calc(100vw) !important;
+  height: calc(
+    100vh - 240px
+  ) !important; // 100 header | 100 footer | 40 - 4 margins
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  right: auto !important;
+  left: auto !important;
+}
+
+// for any elements
+.hiden-mode {
+  display: none !important;
+}

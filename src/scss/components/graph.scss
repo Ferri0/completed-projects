@@ -1,5 +1,7 @@
 .graph {
   @include size(calc(100vw - 20px), calc(50vh));
+  position: relative;
+  transition: $transition;
   margin-bottom: $margin;
   border: $border;
   text-align: center;
