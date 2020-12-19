@@ -10,9 +10,6 @@ export default function (tableClass) {
       sortable: true,
       lockPosition: true,
       flex: 1,
-      // width: 50%,
-      // resizable: true,
-      // suppressSizeToFit: true,
     },
     {
       headerName: "Cases",
@@ -20,8 +17,6 @@ export default function (tableClass) {
       sortable: true,
       lockPosition: true,
       flex: 1,
-      // width: 50%,
-      // suppressSizeToFit: true,
     },
   ];
 
@@ -87,6 +82,4 @@ export default function (tableClass) {
   };
 
   new Grid(eGridDiv, gridOptions);
-
-  // gridOptions.api.sizeColumnsToFit();
 }

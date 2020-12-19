@@ -1,8 +1,9 @@
 import jSuites from "jsuites";
 import properties from "../properties";
 
-// this function set region dropdown menu
+// this function set both dropdown menus in header
 export default function () {
+  // region dropdown
   const regionDropdown = jSuites.dropdown(
     document.getElementById("region-dropdown"),
     {
@@ -46,6 +47,7 @@ export default function () {
     }
   );
 
+  // period dropdown
   const periodDropdown = jSuites.dropdown(
     document.getElementById("period-dropdown"),
     {

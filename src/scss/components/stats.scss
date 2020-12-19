@@ -89,33 +89,33 @@
 
 /*--------------- stats table block ----------------*/
 .stats__table {
-  @include size(100%, 100%);
+  @include size(100%, calc(100% - 150px));
 
-  @media (min-width: 940px) {
-    @include size(100%, 100%);
-  }
+  // @media (min-width: 940px) {
+  //   @include size(100%, 100%);
+  // }
 
   // &--full-screen {
   //   @include size(calc(100vw - 20px), calc(100vh - 365px));
   // }
 
-  &--cases {
-    @media (min-width: 1400px) {
-      @include size(100%, 100%);
-    }
-  }
+  // &--cases {
+  //   @media (min-width: 1400px) {
+  //     @include size(100%, 100%);
+  //   }
+  // }
 
-  &--deaths {
-    @media (min-width: 1400px) {
-      @include size(100%, 100%);
-    }
-  }
+  // &--deaths {
+  //   @media (min-width: 1400px) {
+  //     @include size(100%, 100%);
+  //   }
+  // }
 
-  &--recovered {
-    @media (min-width: 1400px) {
-      @include size(100%, 100%);
-    }
-  }
+  // &--recovered {
+  //   @media (min-width: 1400px) {
+  //     @include size(100%, 100%);
+  //   }
+  // }
 
   div {
     overflow-x: hidden;
