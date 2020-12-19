@@ -1,7 +1,7 @@
 // for elemnts in main block
 // used !important to rewrite all properties when toggle class
 .full-screen-mode {
-  width: calc(100vw) !important;
+  width: calc(100vw - 20px) !important;
   height: calc(
     100vh - 240px
   ) !important; // 100 header | 100 footer | 40 - 4 margins
