@@ -1,6 +1,7 @@
 .last-update {
-  @include size(300px, 100px);
+  @include size(100%, 100px);
   @include flex(column, center, center);
+  margin-bottom: $margin;
   border: $border;
   background-color: $colorBlockBg;
   color: $colorTableTxt;
@@ -13,11 +14,33 @@
 
   // date
   &--date {
-    font-size: $sizeCounterNum;
+    font-size: $sizeCounterTitle;
+  }
+
+  @media (min-width: 630px) {
+    @include size(calc(50% - 5px), 100px);
+    @include flex(column, center, center);
+    margin-right: 25%;
+    margin-left: 25%;
+  }
+
+  @media (min-width: 750px) {
+    @include size(auto, 100px);
+    position: absolute;
+    top: 10px;
+    left: auto;
+    border-right: none;
+    border-left: none;
+    // bottom: 0;
+    // left: 0;
   }
 
   @media (min-width: 1400px) {
+    @include size(300px, 100px);
+    margin: 0;
+    border: $border;
     position: absolute;
+    top: auto;
     bottom: 120px;
     left: 10px;
   }
