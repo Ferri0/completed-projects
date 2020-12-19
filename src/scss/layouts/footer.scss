@@ -1,5 +1,5 @@
 .footer {
-  @include size(100%, 150px);
+  @include size(100%, 100px);
   @include flex(row, space-between, center);
   background-color: $colorBlockBg;
   border: $border;

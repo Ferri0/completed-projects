@@ -1,7 +1,8 @@
 .main {
   @include size(100%, auto);
-  @include flex(column, center, flex-start);
-
+  // @include flex(column, center, flex-start);
+  @include flex(row, center, center);
+  flex-wrap: wrap;
   @media (min-width: 630px) {
     @include flex(row, center, center);
     flex-wrap: wrap;
