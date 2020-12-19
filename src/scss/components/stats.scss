@@ -57,20 +57,6 @@
   }
 }
 
-.stats__full-screen-btn {
-  @include size(20px, 20px);
-  z-index: 10; // z-index to show over the table
-  background-color: red;
-  position: absolute;
-  top: 5px;
-  right: 5px;
-}
-
-.stats__full-screen {
-  @include size(calc(100vw - 20px), calc(100vh - 240px));
-  margin-right: 0 !important;
-}
-
 /*--------------- stats counter block ----------------*/
 .stats__count {
   @include size(100%, 100px);

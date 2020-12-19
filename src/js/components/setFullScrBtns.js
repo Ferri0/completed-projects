@@ -6,7 +6,7 @@ export default function () {
 
   mainElements.map((e) => {
     const fullScreenButton = document.createElement("div");
-    fullScreenButton.classList.add("stats__full-screen-btn");
+    fullScreenButton.classList.add("fullscreen-btn");
     fullScreenButton.addEventListener("click", () => {
       fullScreenButton.parentElement.classList.toggle("full-screen-mode");
       const currentTable = fullScreenButton.parentElement.children[2];

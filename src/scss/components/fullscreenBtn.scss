@@ -1,0 +1,8 @@
+.fullscreen-btn {
+  @include size(20px, 20px);
+  z-index: 10; // z-index to show over the table
+  background-color: red;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
