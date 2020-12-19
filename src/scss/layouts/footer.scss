@@ -15,4 +15,19 @@
 
 .footer__created-by {
   @include flex(column, center, flex-start);
+  line-height: 1.8rem;
+
+  & a {
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+      color: #c4c4c4;
+      transform: scale(1.02);
+    }
+  }
+}
+
+.footer__rss-logo:hover {
+  transform: scale(1.02);
 }

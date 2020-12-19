@@ -1,5 +1,11 @@
 .jdropdown-container {
   outline: none;
+  :nth-child(2n + 2) {
+    background-color: rgb(34, 38, 40) !important;
+  }
+  // :nth-child(2n + 1) {
+  //   background-color: green !important;
+  // }
 }
 
 .jdropdown-container-header {
@@ -33,3 +39,7 @@
   background-color: $colorBlockBg !important;
   border-bottom: $border !important;
 }
+
+// .jdropdown-description {
+//   color: yellow !important;
+// }
