@@ -1,6 +1,7 @@
 import jSuites from "jsuites";
 import properties from "../properties";
 
+// UNDER CONSTRUCTION
 // this function set both dropdown menus in header
 export default function () {
   // region dropdown
@@ -8,7 +9,7 @@ export default function () {
     document.getElementById("region-dropdown"),
     {
       type: "default",
-      // default value
+      // default values
       value: "World",
       data: [
         "World",
@@ -52,7 +53,6 @@ export default function () {
     document.getElementById("period-dropdown"),
     {
       type: "default",
-      // default value
       value: "All time",
       data: ["All time", "Last day"],
       autocomplete: true,

@@ -1,6 +1,5 @@
 .fullscreen-btn {
   @include size(20px, 20px);
-  // transition: $transition;
   z-index: 10; // z-index to show over the table
   background-color: $colorBlockBg;
   border: $border;

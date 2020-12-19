@@ -1,5 +1,5 @@
 // function hide all main child elemnts except one, passed as arg
-// self invoking to avoid unnesessary code in module later, need only returned func
+// self invoking to avoid unnesessary code in module
 export default (function () {
   // closure used to set timeout on toggle fullscreen if app in fullscreen mode
   let currentMode = "visible";

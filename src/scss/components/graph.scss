@@ -9,7 +9,6 @@
   color: $colorTableTxt;
   background-color: $colorBlockBg;
   max-height: 75vh;
-  // margin-right: $margin;
 
   @media (min-width: 630px) {
     @include size(calc(50vw - 17px), calc(50vw - 20px));

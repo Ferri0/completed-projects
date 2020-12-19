@@ -26,8 +26,4 @@
 .header__dropdowns-block {
   height: 70px;
   @include flex(column, space-between, center);
-
-  // @media (min-width: 940px) {
-  //   height: 80px;
-  // }
 }

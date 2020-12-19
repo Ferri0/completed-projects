@@ -24,7 +24,7 @@ export default function (table) {
   // left button disabled by default
   statsControlsLeft.disabled = true;
 
-  // create text block with 2 properties
+  // create text block (for controls block) with 2 properties
   const statsControlsText = document.createElement("div");
   statsControlsText.classList.add("stats__controls--text");
 

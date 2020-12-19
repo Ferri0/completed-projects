@@ -1,9 +1,12 @@
 import hideItherMainElems from "../utility/hideOtherMainElems";
 
+// add full screen buttons to each main element
 export default function () {
+  // get all main elements
   const main = document.querySelector("main");
   const mainElements = Array.from(main.children);
 
+  // create button for each element, add even listener, prepend button to parent block
   mainElements.map((e) => {
     const fullScreenButton = document.createElement("div");
     fullScreenButton.classList.add("fullscreen-btn");
