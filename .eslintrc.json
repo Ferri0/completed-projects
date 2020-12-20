@@ -23,6 +23,7 @@
         "object-shorthand": "off",
         "class-methods-use-this": "off",
         "no-constant-condition": "off",
-        "no-new": "off"
+        "no-new": "off",
+        "no-restricted-globals": "off"
     }
 }

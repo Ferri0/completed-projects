@@ -1,0 +1,29 @@
+.header {
+  @include size(100%, 100px);
+  @include flex(column, space-between, center);
+  margin-bottom: $margin;
+  background-color: $colorBlockBg;
+  border: $border;
+  padding: 5px;
+
+  @media (min-width: 630px) {
+    @include flex(row, space-between, center);
+    padding: $padding;
+  }
+}
+
+.header__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: $colorTableTxt;
+
+  @media (max-width: 630px) {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+}
+
+.header__dropdowns-block {
+  height: 70px;
+  @include flex(column, space-between, center);
+}

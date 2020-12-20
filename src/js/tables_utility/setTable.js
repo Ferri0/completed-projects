@@ -9,14 +9,14 @@ export default function (tableClass) {
       field: "country",
       sortable: true,
       lockPosition: true,
-      width: 160,
+      flex: 1,
     },
     {
       headerName: "Cases",
       field: "cases",
       sortable: true,
       lockPosition: true,
-      width: 140,
+      flex: 1,
     },
   ];
 
@@ -55,6 +55,24 @@ export default function (tableClass) {
     { country: "Italy", cases: "178132001" },
     { country: "Spain", cases: "17800789" },
     { country: "Rome", cases: "17800887" },
+    { country: "US", cases: "17800000" },
+    { country: "India", cases: "378020200" },
+    { country: "France", cases: "1800450" },
+    { country: "Germany", cases: "17800124" },
+    { country: "Ireland", cases: "23478000" },
+    { country: "Great Britain", cases: "17800" },
+    { country: "Italy", cases: "178132001" },
+    { country: "Spain", cases: "17800789" },
+    { country: "Rome", cases: "17800887" },
+    { country: "US", cases: "17800000" },
+    { country: "India", cases: "378020200" },
+    { country: "France", cases: "1800450" },
+    { country: "Germany", cases: "17800124" },
+    { country: "Ireland", cases: "23478000" },
+    { country: "Great Britain", cases: "17800" },
+    { country: "Italy", cases: "178132001" },
+    { country: "Spain", cases: "17800789" },
+    { country: "Rome", cases: "17800887" },
   ];
 
   // let the grid know which columns and what data to use
@@ -64,6 +82,4 @@ export default function (tableClass) {
   };
 
   new Grid(eGridDiv, gridOptions);
-
-  gridOptions.api.sizeColumnsToFit();
 }

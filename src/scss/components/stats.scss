@@ -1,7 +1,64 @@
 /*--------------- stats block ----------------*/
 .stats {
-  @include size(310px, 700px);
+  @include size(100%, 500px);
   @include flex(column, center, center);
+  transition: $transition;
+  margin-bottom: $margin;
+  border: $border;
+  position: relative;
+
+  @media (min-width: 630px) {
+    @include size(calc(50% - 5px), 470px);
+
+    &:first-child {
+      margin-right: $margin;
+    }
+
+    &:nth-child(3) {
+      margin-right: 50px;
+      margin-left: 50px;
+    }
+  }
+
+  @media (min-width: 940px) {
+    @include size(calc(33.33% - 7px), 700px);
+
+    &:first-child {
+      margin-right: $margin;
+    }
+
+    &:nth-child(2) {
+      margin-right: $margin;
+    }
+
+    &:nth-child(3) {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    &:nth-child(1) {
+      @include size(
+        300px,
+        calc(100vh - 350px)
+      ); // 100 footer || 100 header || 50 margins || 100 update-time
+      margin-right: $margin;
+      margin-bottom: 120px;
+      order: 0;
+    }
+
+    &:nth-child(2) {
+      @include size(300px, calc(70vh - 240px));
+      margin-right: $margin;
+      order: 2;
+    }
+
+    &:nth-child(3) {
+      @include size(300px, calc(70vh - 240px));
+      order: 3;
+    }
+  }
 }
 
 /*--------------- stats counter block ----------------*/
@@ -9,7 +66,7 @@
   @include size(100%, 100px);
   @include flex(column, center, center);
   text-align: center;
-  background-color: $colorTableBg;
+  background-color: $colorBlockBg;
   color: $colorTableTxt;
 
   // title
@@ -36,9 +93,10 @@
 
 /*--------------- stats table block ----------------*/
 .stats__table {
-  @include size(100%, 555px);
+  @include size(100%, calc(100% - 150px));
 
   div {
+    overflow-x: hidden;
     font-size: $sizeTableFont;
   }
 
@@ -56,13 +114,17 @@
 }
 
 /*--------------- stats controls block ----------------*/
-/*-- this block builded by js - setTableContriols.js --*/
+/*-- this block filled by js - setTableContriols.js --*/
 .stats__controls {
   @include size(100%, 50px);
   @include flex(row, center, center);
   text-align: center;
-  background-color: $colorTableBg;
+  background-color: $colorBlockBg;
   color: $colorTableTxt;
+
+  div {
+    font-size: $sizeTableFont;
+  }
 
   &--left {
     @include size(80px, 50px);

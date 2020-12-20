@@ -24,7 +24,7 @@ export default function (table) {
   // left button disabled by default
   statsControlsLeft.disabled = true;
 
-  // create text block with 2 properties
+  // create text block (for controls block) with 2 properties
   const statsControlsText = document.createElement("div");
   statsControlsText.classList.add("stats__controls--text");
 
@@ -62,7 +62,6 @@ export default function (table) {
     else if (table === "recoveredTable")
       properties.recoveredTable.units = "absolute";
     else throw new Error("wrong argument passed in setTableControls func");
-    console.log(properties);
   });
 
   // set right button (pagination + change properties)
@@ -78,7 +77,6 @@ export default function (table) {
     else if (table === "recoveredTable")
       properties.recoveredTable.units = "relative";
     else throw new Error("wrong argument passed in setTableControls func");
-    console.log(properties);
   });
 
   // append all inner blocks to controls block
@@ -89,13 +87,13 @@ export default function (table) {
   // append controls block to table depends on arg passed in
   if (table === "casesTable") {
     const casesTable = document.querySelector(".stats__table--cases");
-    casesTable.append(statsControls);
+    casesTable.parentElement.append(statsControls);
   } else if (table === "deathsTable") {
     const deathsTable = document.querySelector(".stats__table--deaths");
-    deathsTable.append(statsControls);
+    deathsTable.parentElement.append(statsControls);
   } else if (table === "recoveredTable") {
     const recoveredTable = document.querySelector(".stats__table--recovered");
-    recoveredTable.append(statsControls);
+    recoveredTable.parentElement.append(statsControls);
   } else {
     throw new Error("wrong argument passed in setTableControls func");
   }
