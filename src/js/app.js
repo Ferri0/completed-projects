@@ -2,6 +2,7 @@
 import "jsuites/dist/jsuites.css"; // dropdown styles
 import "ag-grid-community/dist/styles/ag-grid.css"; // table styles
 import "ag-grid-community/dist/styles/ag-theme-alpine-dark.css"; // table styles (dark)
+import "leaflet/dist/leaflet.css"; // leaflet css
 import "../scss/style.scss"; // current project styles
 
 // modules
@@ -11,6 +12,7 @@ import setTable from "./tables_utility/setTable";
 import setTableControls from "./tables_utility/setTableControls";
 import setFullScrBtns from "./components/setFullScrBtns";
 import updatePage from "./utility/updatePage";
+import viewMap from "./components/map";
 
 // get data from api and store it locally
 getApiData();
@@ -29,3 +31,8 @@ setFullScrBtns();
 // set all values from api data, should always run last.
 // timeout added as emulation of async/await (fix later?)
 setTimeout(() => updatePage(), 1000);
+
+// display map
+setTimeout(() => viewMap(), 1000);
+;
+
