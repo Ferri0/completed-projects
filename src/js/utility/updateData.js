@@ -46,5 +46,13 @@ export default (function () {
       setTable("recovered");
       prevRecoveredTableUnits = properties.recoveredTable.units;
     }
+
+    // set up last update date
+    const lastUpdateDate = document.querySelector(".last-update--date");
+    const lastUpdateTime = document.querySelector(".last-update--time");
+    if (lastUpdateDate.innerText === "") {
+      lastUpdateDate.innerText = properties.apiData.Date.slice(0, 10);
+      lastUpdateTime.innerText = properties.apiData.Date.slice(11, -1);
+    }
   };
 })();

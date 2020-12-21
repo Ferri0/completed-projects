@@ -17,6 +17,10 @@
     font-size: $sizeCounterTitle;
   }
 
+  &--time {
+    font-size: $sizeCounterTitle;
+  }
+
   @media (min-width: 630px) {
     @include size(calc(50% - 5px), 100px);
     @include flex(column, center, center);
