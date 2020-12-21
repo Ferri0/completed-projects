@@ -7,13 +7,10 @@ import "../scss/style.scss"; // current project styles
 // modules
 import getApiData from "./utility/getApiData";
 import setDropdowns from "./components/setDropdowns";
-import setTable from "./tables_utility/setTable";
 import setTableControls from "./tables_utility/setTableControls";
+import setGraphControls from "./utility/setGraphControls";
 import setFullScrBtns from "./components/setFullScrBtns";
-import updatePage from "./utility/updatePage";
-
-// get data from api and store it locally
-getApiData();
+import updateData from "./utility/updateData";
 
 // set up and fill dropdowns in header
 setDropdowns();
@@ -23,9 +20,11 @@ setTableControls("casesTable");
 setTableControls("deathsTable");
 setTableControls("recoveredTable");
 
+// set up graph controls
+setGraphControls();
+
 // display and set up fullscreen buttons for main blocks
 setFullScrBtns();
 
-// set all values from api data, should always run last.
-// timeout added as emulation of async/await (fix later?)
-setTimeout(() => updatePage(), 1000);
+// callback function as arg to set default page after fetches completed
+getApiData(updateData);

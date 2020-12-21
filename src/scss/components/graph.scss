@@ -1,5 +1,6 @@
 .graph {
   @include size(calc(100vw - 20px), calc(50vh));
+  @include flex(column, flex-end, center);
   position: relative;
   transition: $transition;
   margin-bottom: $margin;
@@ -21,5 +22,74 @@
     position: absolute;
     bottom: 110px;
     right: 10px;
+  }
+}
+
+.graph-controls {
+  @include size(100%, 50px);
+  @include flex(row, center, center);
+  border-top: $border;
+  text-align: center;
+  background-color: $colorBlockBg;
+  color: $colorTableTxt;
+
+  div {
+    font-size: $sizeTableFont;
+  }
+
+  &--disabled {
+    filter: brightness(30%);
+    cursor: default !important;
+  }
+}
+
+.graph-controls__left {
+  @include size(70px, 50px);
+  @include flex(column, center, center);
+  cursor: pointer;
+
+  img {
+    @include size(30px, 30px);
+    transform: rotate(180deg);
+  }
+}
+
+.graph-controls__right {
+  @include size(70px, 50px);
+  @include flex(column, center, center);
+  cursor: pointer;
+
+  img {
+    @include size(30px, 30px);
+  }
+}
+
+.graph-controls__text {
+  position: relative;
+  @include size(100%, 100%);
+  @include flex(row, center, center);
+  line-height: 50px;
+  overflow: hidden;
+
+  &--visible {
+    left: 0;
+  }
+
+  &--first-property {
+    transition: all 0.3s linear;
+    position: absolute;
+    @include size(100%, 100%);
+  }
+
+  &--second-property {
+    transition: all 0.3s linear;
+    position: absolute;
+    @include size(100%, 100%);
+  }
+
+  &--third-property {
+    transition: all 0.3s linear;
+    position: absolute;
+    @include size(100%, 100%);
   }
 }

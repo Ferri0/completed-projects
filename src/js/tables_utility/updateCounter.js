@@ -2,7 +2,7 @@ import properties from "../properties";
 
 // set counter depends on properties values
 // argument is part of table class name: cases || deaths || recpovered
-export default function (tableName) {
+export default async function (tableName) {
   const counterElement = document.querySelector(`.stats__count--${tableName}`);
   switch (tableName) {
     case "cases":

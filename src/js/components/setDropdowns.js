@@ -1,6 +1,6 @@
 import jSuites from "jsuites";
 import properties from "../properties";
-import updatePage from "../utility/updatePage";
+import updateData from "../utility/updateData";
 
 // UNDER CONSTRUCTION
 // this function set both dropdown menus in header
@@ -62,7 +62,7 @@ export default function () {
       // change properties when dropdown menu close (on each change of value)
       onclose: function () {
         properties.period = periodDropdown.getValue();
-        updatePage();
+        updateData();
         if (this.value === "") {
           periodDropdown.setValue("All time");
           // did this to show selected item if twice choice same item, dont find another way
