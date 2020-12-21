@@ -33,4 +33,6 @@ setFullScrBtns();
 setTimeout(() => updatePage(), 1000);
 
 // display map
-viewMap();
+setTimeout(() => viewMap(), 1000);
+;
+
