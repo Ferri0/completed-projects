@@ -4,6 +4,8 @@ import WorldData from "geojson-world-map";
 export default function viewMap() {
   const map = L.map("map").setView([40, 10], 2);
 
+  // console.log(WorldData);
+
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
     {
@@ -79,7 +81,7 @@ export default function viewMap() {
     const layer = e.target;
 
     layer.setStyle({
-      weight: 5,
+      weight: 2,
       color: "#666",
       dashArray: "",
       fillOpacity: 0.7,
@@ -117,7 +119,7 @@ export default function viewMap() {
   }).addTo(map);
 
   map.attributionControl.addAttribution(
-    'Population data &copy; <a href="http://census.gov/">US Census Bureau</a>'
+    'Covid data &copy; <a href="https://covid19api.com/" target="_blank">Covid API</a>'
   );
 
   const legend = L.control({ position: "bottomright" });
