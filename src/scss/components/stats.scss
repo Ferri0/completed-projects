@@ -37,7 +37,7 @@
     }
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1400px) and (min-height: 950px) and (min-height: 950px) {
     &:nth-child(1) {
       @include size(
         300px,
@@ -49,13 +49,13 @@
     }
 
     &:nth-child(2) {
-      @include size(300px, calc(70vh - 240px));
+      @include size(300px, calc(60vh - 240px));
       margin-right: $margin;
       order: 2;
     }
 
     &:nth-child(3) {
-      @include size(300px, calc(70vh - 240px));
+      @include size(300px, calc(60vh - 240px));
       order: 3;
     }
   }
