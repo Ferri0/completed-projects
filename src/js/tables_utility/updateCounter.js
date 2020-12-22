@@ -5,13 +5,58 @@ import properties from "../properties";
 export default async function (tableName) {
   const counterElement = document.querySelector(`.stats__count--${tableName}`);
 
+  const worldPopulation = 7856170432;
+
   // get current country data
   let currentCountryData = null;
+  let currentCountryPopulation = null;
   if (properties.region !== "World") {
     currentCountryData = properties.apiData.Countries.filter((e) => {
       if (e.Country === properties.region) return e;
       return null;
     });
+    const populationArray = properties.apiDataCountries.filter((e) => {
+      let countryName = null;
+
+      if (e.name === "Bolivia (Plurinational State of)")
+        countryName = "Bolivia";
+      else if (e.name === "Cabo Verde") countryName = "Cape Verde";
+      else if (e.name === "Congo") countryName = "Congo (Brazzaville)";
+      else if (e.name === "Congo (Democratic Republic of the)")
+        countryName = "Congo (Kinshasa)";
+      else if (e.name === "Holy See")
+        countryName = "Holy See (Vatican City State)";
+      else if (e.name === "Iran (Islamic Republic of)")
+        countryName = "Iran, Islamic Republic of";
+      else if (e.name === "Korea (Democratic People's Republic of)")
+        countryName = "Korea (South)";
+      else if (e.name === "Lao People's Democratic Republic")
+        countryName = "Lao PDR";
+      else if (e.name === "Macao") countryName = "Macao, SAR China";
+      else if (e.name === "Macedonia (the former Yugoslav Republic of)")
+        countryName = "Macedonia, Republic of";
+      else if (e.name === "Moldova (Republic of)") countryName = "Moldova";
+      else if (e.name === "Palestine, State of")
+        countryName = "Palestinian Territory";
+      else if (e.name === "Saint Barthélemy")
+        countryName = "Saint Vincent and Grenadines";
+      else if (e.name === "Syrian Arab Republic")
+        countryName = "Syrian Arab Republic (Syria)";
+      else if (e.name === "Taiwan") countryName = "Taiwan, Republic of China";
+      else if (e.name === "United Arab Emirates")
+        countryName = "United Arab Emirates";
+      else if (
+        e.name === "United Kingdom of Great Britain and Northern Ireland"
+      )
+        countryName = "United Kingdom";
+      else if (e.name === "Venezuela (Bolivarian Republic of)")
+        countryName = "Venezuela (Bolivarian Republic)";
+      else countryName = e.name;
+
+      if (countryName === properties.region) return e;
+      return null;
+    });
+    currentCountryPopulation = populationArray[0].population;
   }
 
   switch (tableName) {
@@ -27,7 +72,7 @@ export default async function (tableName) {
         // check properties points and set counter depends on it value
         if (properties.casesTable.units !== "absolute") {
           counterElement.innerText = Math.ceil(
-            (+counterElement.innerText / 7856170432) * 100000
+            (+counterElement.innerText / worldPopulation) * 100000
           );
         }
       } else {
@@ -40,7 +85,7 @@ export default async function (tableName) {
         // check properties points and set counter depends on it value
         if (properties.casesTable.units !== "absolute") {
           counterElement.innerText = Math.ceil(
-            (+counterElement.innerText / 7856170432) * 100000
+            (+counterElement.innerText / currentCountryPopulation) * 100000
           );
         }
       }
@@ -56,7 +101,7 @@ export default async function (tableName) {
         // check properties points and set counter depends on it value
         if (properties.deathsTable.units !== "absolute") {
           counterElement.innerText = Math.ceil(
-            (+counterElement.innerText / 7856170432) * 100000
+            (+counterElement.innerText / worldPopulation) * 100000
           );
         }
       } else {
@@ -68,7 +113,7 @@ export default async function (tableName) {
         // check properties points and set counter depends on it value
         if (properties.deathsTable.units !== "absolute") {
           counterElement.innerText = Math.ceil(
-            (+counterElement.innerText / 7856170432) * 100000
+            (+counterElement.innerText / currentCountryPopulation) * 100000
           );
         }
       }
@@ -85,7 +130,7 @@ export default async function (tableName) {
         // check properties points and set counter depends on it value
         if (properties.recoveredTable.units !== "absolute") {
           counterElement.innerText = Math.ceil(
-            (+counterElement.innerText / 7856170432) * 100000
+            (+counterElement.innerText / worldPopulation) * 100000
           );
         }
       } else {
@@ -98,7 +143,7 @@ export default async function (tableName) {
         // check properties points and set counter depends on it value
         if (properties.recoveredTable.units !== "absolute") {
           counterElement.innerText = Math.ceil(
-            (+counterElement.innerText / 7856170432) * 100000
+            (+counterElement.innerText / currentCountryPopulation) * 100000
           );
         }
       }

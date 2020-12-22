@@ -17,9 +17,6 @@ import viewMap from "./components/map";
 // callback function as arg to set default page after fetches completed
 getApiData(updateData, viewMap, setDropdowns);
 
-// // set up and fill dropdowns in header
-// setTimeout(() => setDropdowns(), 1000);
-
 // display and set up controls for each of three tables
 setTableControls("casesTable");
 setTableControls("deathsTable");
