@@ -16,8 +16,7 @@ export default (function () {
   let prevRecoveredTableUnits = null;
 
   return function () {
-    console.log(properties.apiData); //! TODO: remove later
-    console.log(properties.apiDataCountries); //! TODO: remove later
+    console.log(properties);
     // check and set cases table
     if (
       isStatusChanged() ||

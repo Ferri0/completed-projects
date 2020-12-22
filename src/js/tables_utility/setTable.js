@@ -19,7 +19,20 @@ export default function (tableClass) {
   ];
   let eGridDiv;
   let rowData;
-  if (tableClass === "cases") {
+  // set empty tables if selected country
+  if (properties.region !== "World") {
+    columnDefs[0].field = "----";
+    columnDefs[0].headerName = "----";
+    columnDefs.push({
+      headerName: "----",
+      field: "----",
+      sortable: false,
+      lockPosition: true,
+      flex: 1,
+    });
+    eGridDiv = currentTable;
+    rowData = [];
+  } else if (tableClass === "cases") {
     const fieldName =
       properties.period === "All time" ? "TotalConfirmed" : "NewConfirmed";
     columnDefs.push({
@@ -61,46 +74,6 @@ export default function (tableClass) {
   } else {
     throw new Error("wron argument passed to setTable function");
   }
-
-  // specify the data
-  // const rowData = [
-  //   { country: "US", cases: "17800000" },
-  //   { country: "India", cases: "378020200" },
-  //   { country: "France", cases: "1800450" },
-  //   { country: "Germany", cases: "17800124" },
-  //   { country: "Ireland", cases: "23478000" },
-  //   { country: "Great Britain", cases: "17800" },
-  //   { country: "Italy", cases: "178132001" },
-  //   { country: "Spain", cases: "17800789" },
-  //   { country: "Rome", cases: "17800887" },
-  //   { country: "US", cases: "17800000" },
-  //   { country: "India", cases: "378020200" },
-  //   { country: "France", cases: "1800450" },
-  //   { country: "Germany", cases: "17800124" },
-  //   { country: "Ireland", cases: "23478000" },
-  //   { country: "Great Britain", cases: "17800" },
-  //   { country: "Italy", cases: "178132001" },
-  //   { country: "Spain", cases: "17800789" },
-  //   { country: "Rome", cases: "17800887" },
-  //   { country: "US", cases: "17800000" },
-  //   { country: "India", cases: "378020200" },
-  //   { country: "France", cases: "1800450" },
-  //   { country: "Germany", cases: "17800124" },
-  //   { country: "Ireland", cases: "23478000" },
-  //   { country: "Great Britain", cases: "17800" },
-  //   { country: "Italy", cases: "178132001" },
-  //   { country: "Spain", cases: "17800789" },
-  //   { country: "Rome", cases: "17800887" },
-  //   { country: "US", cases: "17800000" },
-  //   { country: "India", cases: "378020200" },
-  //   { country: "France", cases: "1800450" },
-  //   { country: "Germany", cases: "17800124" },
-  //   { country: "Ireland", cases: "23478000" },
-  //   { country: "Great Britain", cases: "17800" },
-  //   { country: "Italy", cases: "178132001" },
-  //   { country: "Spain", cases: "17800789" },
-  //   { country: "Rome", cases: "17800887" },
-  // ];
 
   // let the grid know which columns and what data to use
   const gridOptions = {
