@@ -2,7 +2,6 @@ import jSuites from "jsuites";
 import properties from "../properties";
 import updateData from "../utility/updateData";
 
-// UNDER CONSTRUCTION
 // this function set both dropdown menus in header
 export default function () {
   // region dropdown
