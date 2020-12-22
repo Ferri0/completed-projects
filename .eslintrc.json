@@ -25,6 +25,7 @@
         "no-constant-condition": "off",
         "no-new": "off",
         "no-restricted-globals": "off",
-        "prefer-rest-params": "off"
+        "prefer-rest-params": "off",
+        "no-lonely-if": "off"
     }
 }

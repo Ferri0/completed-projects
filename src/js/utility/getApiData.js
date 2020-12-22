@@ -22,8 +22,8 @@ export default async function getApiData() {
 
   // create countries array with default first element World
   const countries = ["World"];
-  for (let i = 1; i < properties.apiData.Countries.length; i += 1) {
-    countries[i] = properties.apiData.Countries[i].Country;
+  for (let i = 0; i < properties.apiData.Countries.length; i += 1) {
+    countries[i + 1] = properties.apiData.Countries[i].Country;
   }
 
   // run all callback functions to set up data by default
