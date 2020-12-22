@@ -3,41 +3,23 @@ import properties from "../properties";
 import updateData from "../utility/updateData";
 
 // this function set both dropdown menus in header
-export default function () {
+export default function (countriesArray) {
+  console.log(properties.apiData);
   // region dropdown
   const regionDropdown = jSuites.dropdown(
     document.getElementById("region-dropdown"),
     {
       type: "default",
-      // default values
+      // default value
       value: "World",
-      data: [
-        "World",
-        "India",
-        "France",
-        "Germany",
-        "Ukraine",
-        "Italy",
-        "Spain",
-        "Canada",
-        "China",
-        "US",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8a",
-        "U9",
-      ],
+      data: countriesArray,
       autocomplete: true,
       lazyLoading: true,
       width: "100%",
       // change properties when dropdown menu close (on each change of value)
       onclose: function () {
         properties.region = regionDropdown.getValue();
+        updateData();
         if (this.value === "") {
           regionDropdown.setValue("World");
           // did this to show selected item if twice choice same item, dont find another way
