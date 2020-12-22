@@ -4,7 +4,6 @@ import updateData from "../utility/updateData";
 
 // this function set both dropdown menus in header
 export default function (countriesArray) {
-  console.log(properties.apiData);
   // region dropdown
   const regionDropdown = jSuites.dropdown(
     document.getElementById("region-dropdown"),

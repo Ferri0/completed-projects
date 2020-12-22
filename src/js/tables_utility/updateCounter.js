@@ -10,6 +10,7 @@ export default async function (tableName) {
   // get current country data
   let currentCountryData = null;
   let currentCountryPopulation = null;
+  console.log(properties.region)
   if (properties.region !== "World") {
     currentCountryData = properties.apiData.Countries.filter((e) => {
       if (e.Country === properties.region) return e;
@@ -56,8 +57,12 @@ export default async function (tableName) {
       if (countryName === properties.region) return e;
       return null;
     });
-    currentCountryPopulation = populationArray[0].population;
+    if (properties.region !== "World" && properties.region !== "") {
+      currentCountryPopulation = populationArray[0].population;
+    }
   }
+
+  if (properties.region === "") properties.region = "World";
 
   switch (tableName) {
     case "cases":
