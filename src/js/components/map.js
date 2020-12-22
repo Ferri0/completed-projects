@@ -4,7 +4,7 @@ import properties from "../properties";
 
 export default function viewMap() {
   const map = L.map("map").setView([40, 10], 2);
-  
+
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
     {
@@ -135,7 +135,9 @@ export default function viewMap() {
       to = grades[i + 1];
 
       // labels.push('<i style="background:' + getColor(from + 1) + '"></i> ' + from + (to ? "&ndash;" + to : "+"));
-      labels.push(`<i style="background:${getColor(from + 1)}"></i>${from} &ndash; ${to}`);
+      labels.push(
+        `<i style="background:${getColor(from + 1)}"></i>${from} &ndash; ${to}`
+      );
 
       // labels
       //   .push

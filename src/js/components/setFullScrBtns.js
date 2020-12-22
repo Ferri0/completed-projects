@@ -13,8 +13,6 @@ export default function () {
     fullScreenButton.addEventListener("click", () => {
       fullScreenButton.classList.toggle("fullscreen-btn--on");
       fullScreenButton.parentElement.classList.toggle("full-screen-mode");
-      const currentTable = fullScreenButton.parentElement.children[2];
-      currentTable.classList.toggle("stats__table--full-screen");
       hideItherMainElems(fullScreenButton.parentElement);
     });
     e.prepend(fullScreenButton);

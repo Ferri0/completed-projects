@@ -51,19 +51,29 @@
     <!-- last-updated block -->
     <div class="last-update">
       <span class="last-update--title">Last update:</span>
-      <span class="last-update--date">19.12.2020</span>
+      <span class="last-update--date"></span>
+      <span class="last-update--time"></span>
     </div>
 
     <!-- map block -->
     <div class="map" id="map">
-      map block<br>
-      styles in scss/components/map.scss<br>
     </div>
 
     <!-- graph block -->
     <div class="graph">
-      graph block<br>
-      styles in scss/components/graph.scss<br>
+      <div class="graph-controls">
+        <button class="graph-controls__left graph-controls--disabled">
+          <img src="./img/arrow.svg" alt="arrow-right">
+        </button>
+        <div class="graph-controls__text">
+          <div class="graph-controls__text--first-property graph-controls__text--visible" style="left: 0;">Cases</div>
+          <div class="graph-controls__text--second-property" style="left: -100%;">Deaths</div>
+          <div class="graph-controls__text--third-property" style="left: -200%;">Recovered</div>
+        </div>
+        <button class="graph-controls__right">
+          <img src="./img/arrow.svg" alt="arrow-right">
+        </button>
+      </div>
     </div>
   </main>
 

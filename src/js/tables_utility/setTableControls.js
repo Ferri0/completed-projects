@@ -1,5 +1,5 @@
 import properties from "../properties";
-import updatePage from "../utility/updatePage";
+import updateData from "../utility/updateData";
 
 /*
  * this function display controls to table depends on arg passed in
@@ -63,7 +63,7 @@ export default function (table) {
     else if (table === "recoveredTable")
       properties.recoveredTable.units = "absolute";
     else throw new Error("wrong argument passed in setTableControls func");
-    updatePage();
+    updateData();
   });
 
   // set right button (pagination + change properties)
@@ -79,7 +79,7 @@ export default function (table) {
     else if (table === "recoveredTable")
       properties.recoveredTable.units = "relative";
     else throw new Error("wrong argument passed in setTableControls func");
-    updatePage();
+    updateData();
   });
 
   // append all inner blocks to controls block
