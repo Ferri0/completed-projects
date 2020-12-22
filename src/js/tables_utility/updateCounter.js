@@ -1,67 +1,95 @@
 import properties from "../properties";
 
 // set counter depends on properties values
-// argument is part of table class name: cases || deaths || recpovered
+// argument is part of table class name: cases || deaths || recovered
 export default async function (tableName) {
   const counterElement = document.querySelector(`.stats__count--${tableName}`);
 
+  // set default world population (23.12.2020)
   const worldPopulation = 7856170432;
 
   // get current country data
   let currentCountryData = null;
   let currentCountryPopulation = null;
-  console.log(properties.region)
   if (properties.region !== "World") {
     currentCountryData = properties.apiData.Countries.filter((e) => {
       if (e.Country === properties.region) return e;
       return null;
     });
-    const populationArray = properties.apiDataCountries.filter((e) => {
-      let countryName = null;
 
-      if (e.name === "Bolivia (Plurinational State of)")
-        countryName = "Bolivia";
-      else if (e.name === "Cabo Verde") countryName = "Cape Verde";
-      else if (e.name === "Congo") countryName = "Congo (Brazzaville)";
-      else if (e.name === "Congo (Democratic Republic of the)")
-        countryName = "Congo (Kinshasa)";
-      else if (e.name === "Holy See")
-        countryName = "Holy See (Vatican City State)";
-      else if (e.name === "Iran (Islamic Republic of)")
-        countryName = "Iran, Islamic Republic of";
-      else if (e.name === "Korea (Democratic People's Republic of)")
-        countryName = "Korea (South)";
-      else if (e.name === "Lao People's Democratic Republic")
-        countryName = "Lao PDR";
-      else if (e.name === "Macao") countryName = "Macao, SAR China";
-      else if (e.name === "Macedonia (the former Yugoslav Republic of)")
-        countryName = "Macedonia, Republic of";
-      else if (e.name === "Moldova (Republic of)") countryName = "Moldova";
-      else if (e.name === "Palestine, State of")
-        countryName = "Palestinian Territory";
-      else if (e.name === "Saint Barthélemy")
-        countryName = "Saint Vincent and Grenadines";
-      else if (e.name === "Syrian Arab Republic")
-        countryName = "Syrian Arab Republic (Syria)";
-      else if (e.name === "Taiwan") countryName = "Taiwan, Republic of China";
-      else if (e.name === "United Arab Emirates")
-        countryName = "United Arab Emirates";
-      else if (
-        e.name === "United Kingdom of Great Britain and Northern Ireland"
-      )
-        countryName = "United Kingdom";
-      else if (e.name === "Venezuela (Bolivarian Republic of)")
-        countryName = "Venezuela (Bolivarian Republic)";
-      else countryName = e.name;
+    const populationArray = properties.apiDataCountries.filter((e) => {
+      // fix difference between countries names in apis
+      let countryName = null;
+      switch (e.name) {
+        case "Bolivia (Plurinational State of)":
+          countryName = "Bolivia";
+          break;
+        case "Cabo Verde":
+          countryName = "Cape Verde";
+          break;
+        case "Congo":
+          countryName = "Congo (Brazzaville)";
+          break;
+        case "Congo (Democratic Republic of the)":
+          countryName = "Congo (Kinshasa)";
+          break;
+        case "Holy See":
+          countryName = "Holy See (Vatican City State)";
+          break;
+        case "Iran (Islamic Republic of)":
+          countryName = "Iran, Islamic Republic of";
+          break;
+        case "Korea (Democratic People's Republic of)":
+          countryName = "Korea (South)";
+          break;
+        case "Lao People's Democratic Republic":
+          countryName = "Lao PDR";
+          break;
+        case "Macao":
+          countryName = "Macao, SAR China";
+          break;
+        case "Macedonia (the former Yugoslav Republic of)":
+          countryName = "Macedonia, Republic of";
+          break;
+        case "Moldova (Republic of)":
+          countryName = "Moldova";
+          break;
+        case "Palestine, State of":
+          countryName = "Palestinian Territory";
+          break;
+        case "Saint Barthélemy":
+          countryName = "Saint Vincent and Grenadines";
+          break;
+        case "Syrian Arab Republic":
+          countryName = "Syrian Arab Republic (Syria)";
+          break;
+        case "Taiwan":
+          countryName = "Taiwan, Republic of China";
+          break;
+        case "United Arab Emirates":
+          countryName = "United Arab Emirates";
+          break;
+        case "United Kingdom of Great Britain and Northern Ireland":
+          countryName = "United Kingdom";
+          break;
+        case "Venezuela (Bolivarian Republic of)":
+          countryName = "Venezuela (Bolivarian Republic)";
+          break;
+        default:
+          countryName = e.name;
+          break;
+      }
 
       if (countryName === properties.region) return e;
       return null;
     });
+
     if (properties.region !== "World" && properties.region !== "") {
       currentCountryPopulation = populationArray[0].population;
     }
   }
 
+  // catch empty value of properties.region which happens on select selected item
   if (properties.region === "") properties.region = "World";
 
   switch (tableName) {
