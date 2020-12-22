@@ -25,6 +25,7 @@ export default function (countriesArray) {
           // did this to show selected item if twice choice same item, dont find another way
           regionDropdown.open();
           regionDropdown.close();
+          window.scroll(0, 0);
         }
       },
     }
@@ -49,6 +50,7 @@ export default function (countriesArray) {
           // did this to show selected item if twice choice same item, dont find another way
           periodDropdown.open();
           periodDropdown.close();
+          window.scroll(0, 0);
         }
       },
     }
