@@ -14,8 +14,8 @@ import setFullScrBtns from "./components/setFullScrBtns";
 import updateData from "./utility/updateData";
 import viewMap from "./components/map";
 
-// set up and fill dropdowns in header
-setDropdowns();
+// callback function as arg to set default page after fetches completed
+getApiData(updateData, viewMap, setDropdowns);
 
 // display and set up controls for each of three tables
 setTableControls("casesTable");
@@ -27,6 +27,3 @@ setGraphControls();
 
 // display and set up fullscreen buttons for main blocks
 setFullScrBtns();
-
-// callback function as arg to set default page after fetches completed
-getApiData(updateData, viewMap);

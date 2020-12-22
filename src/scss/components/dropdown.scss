@@ -3,6 +3,10 @@
 .jdropdown-container {
   outline: none;
 
+  @media (min-width: 640px) {
+    width: 100% !important;
+  }
+
   // different colors for items in dropdown
   :nth-child(2n + 2) {
     background-color: $colorDropdownItem !important;
