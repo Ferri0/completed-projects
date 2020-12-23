@@ -15,7 +15,6 @@ import updateData from "./utility/updateData";
 import chart from "./chart/chart";
 import viewMap from "./components/map";
 import setApiDataRelative from "./utility/setApiDataRelative";
-import properties from "./properties";
 
 // callback function as arg to set default page after fetches completed
 getApiData(updateData, viewMap, setDropdowns, setApiDataRelative);
@@ -33,4 +32,3 @@ chart();
 
 // display and set up fullscreen buttons for main blocks
 setFullScrBtns();
-console.log(properties);

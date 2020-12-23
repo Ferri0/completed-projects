@@ -16,7 +16,7 @@ export default function (tableClass) {
       field: "Country",
       sortable: true,
       lockPosition: true,
-      flex: 1,
+      flex: 1.4,
     },
   ];
 
@@ -165,6 +165,8 @@ export default function (tableClass) {
 
   // let the grid know which columns and what data to use
   const gridOptions = {
+    headerHeight: 30,
+    rowHeight: 30,
     columnDefs: columnDefs,
     rowData: rowData,
   };
