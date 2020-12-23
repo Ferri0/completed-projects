@@ -19,15 +19,17 @@
 
   @media (max-width: 630px) {
     font-size: 1.4rem;
-    line-height: 2rem;
+    line-height: 1.6rem;
   }
 }
 
 .header__dropdowns-block {
   height: 50px;
   @include flex(column, space-between, center);
+  margin-bottom: 10px;
 
   @media (min-width: 800px) {
     height: 70px;
+    margin-bottom: 0px;
   }
 }
