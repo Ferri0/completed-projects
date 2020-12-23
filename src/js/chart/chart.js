@@ -165,17 +165,17 @@ if (period === "All time" || period === undefined ){
       };
         if (stateControls === "cases" && region === "World" ) {
           state = arrTotalCases;
-          title = 'total historical in a day cases '
+          title = 'total historical daily cases '
           
         } else if (stateControls === "deaths" && region === "World" ) {
           state = arrTotalDeaths;
-          title = 'total historical in a day death'
+          title = 'total historical daily death'
         } else if (stateControls === "recovered" && region === "World" ) {
           state = arrTotalRecovered;
-          title = 'total historical in a day recovered'
+          title = 'total historical daily recovered'
         } else if (stateControls === undefined && region === undefined ) {
           state = arrTotalCases;
-          title = 'total historical in a day cases'
+          title = 'total historical daily cases'
         } 
   
          chartConfig = {
@@ -234,16 +234,16 @@ if (period === "All time" || period === undefined ){
   
      if (stateControls === "cases") {
       state = arrTotalCases;
-      title = `historical in a day cases ${region}`
+      title = `historical daily cases ${region}`
      } else if (stateControls === "deaths"){
       state = arrTotalDeaths;
-      title = `historical in a day deaths ${region}`
+      title = `historical daily deaths ${region}`
      } else if (stateControls === "recovered"){
       state = arrTotalRecovered;
-      title = `historical in a day recovered ${region}`
+      title = `historical daily recovered ${region}`
      } else if (stateControls === undefined){
       state = arrTotalCases;
-      title = `historical in a day cases ${region}`
+      title = `historical daily cases ${region}`
      }
     
        chartConfig = {
