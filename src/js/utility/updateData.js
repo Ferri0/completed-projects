@@ -56,7 +56,7 @@ export default (function () {
     }
     
     if (isStatusChanged() || properties.region !== undefined ){
-      chart(properties.graphDisplay,properties.region);
+      chart(properties.graphDisplay,properties.region, properties.period);
     }
   };
 })();
