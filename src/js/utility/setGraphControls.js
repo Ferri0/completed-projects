@@ -1,4 +1,5 @@
 import properties from "../properties";
+import chart from "../chart/chart";
 
 export default function () {
   const leftButton = document.querySelector(".graph-controls__left");
@@ -34,7 +35,8 @@ export default function () {
       firstProp.style.left = "+100%";
       thirdProp.style.left = "-100%";
     }
-    //! TODO: updateGraph function here
+
+    chart(properties.graphDisplay,properties.region); // update chart
   });
 
   rightButton.addEventListener("click", () => {
@@ -57,6 +59,7 @@ export default function () {
       secondProp.style.left = "+100%";
       firstProp.style.left = "+200%";
     }
-    //! TODO: updateGraph function here
+
+    chart(properties.graphDisplay,properties.region); // update chart
   });
 }
