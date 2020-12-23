@@ -30,6 +30,8 @@ export default function (countriesArray) {
     }
   );
 
+  properties.regionDropdown = regionDropdown;
+
   // period dropdown
   const periodDropdown = jSuites.dropdown(
     document.getElementById("period-dropdown"),
