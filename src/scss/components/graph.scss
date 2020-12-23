@@ -1,3 +1,8 @@
+#chart {
+  background-color: rgba(14, 13, 13, 0.863);
+  width: 100% !important; 
+  height: calc(100% - 50px) !important;
+ }
 .graph {
   @include size(calc(100vw - 20px), calc(50vh));
   @include flex(column, flex-end, center);
@@ -15,9 +20,9 @@
     @include size(calc(50vw - 17px), calc(50vw - 20px));
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1400px) and (min-height: 950px) {
     order: 4;
-    height: calc(30vh - 9px);
+    height: calc(40vh - 9px);
     width: 610px;
     position: absolute;
     bottom: 110px;

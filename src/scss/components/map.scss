@@ -15,7 +15,7 @@
     margin-right: 10px;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1400px) and (min-height: 950px) {
     width: calc(100% - 930px);
     height: calc(100vw - 950px);
     margin-right: $margin;

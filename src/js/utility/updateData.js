@@ -2,6 +2,7 @@ import properties from "../properties";
 import isStatusChanged from "./isStatusChanged";
 import updateCounter from "../tables_utility/updateCounter";
 import setTable from "../tables_utility/setTable";
+import chart from "../chart/chart"
 
 /*
  * run this each time any property of page changes,
@@ -16,7 +17,6 @@ export default (function () {
   let prevRecoveredTableUnits = null;
 
   return function () {
-    console.log(properties); //! TODO: remove later
     // check and set cases table
     if (
       isStatusChanged() ||
@@ -53,6 +53,10 @@ export default (function () {
     if (lastUpdateDate.innerText === "") {
       lastUpdateDate.innerText = properties.apiData.Date.slice(0, 10);
       lastUpdateTime.innerText = properties.apiData.Date.slice(11, -1);
+    }
+    
+    if (isStatusChanged() || properties.region !== undefined ){
+      chart(properties.graphDisplay,properties.region);
     }
   };
 })();
