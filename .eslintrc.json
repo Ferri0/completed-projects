@@ -17,7 +17,7 @@
     "rules": {
         "prettier/prettier": "warn",
         "no-unused-vars": "warn",
-        "no-console": "off",
+        "no-console": "warn",
         "func-names": "off",
         "no-process-exit": "off",
         "object-shorthand": "off",

@@ -63,7 +63,9 @@ export default function (table) {
     else if (table === "recoveredTable")
       properties.recoveredTable.units = "absolute";
     else throw new Error("wrong argument passed in setTableControls func");
-    updateData();
+    setTimeout(() => {
+      updateData();
+    }, 350);
   });
 
   // set right button (pagination + change properties)
@@ -79,7 +81,9 @@ export default function (table) {
     else if (table === "recoveredTable")
       properties.recoveredTable.units = "relative";
     else throw new Error("wrong argument passed in setTableControls func");
-    updateData();
+    setTimeout(() => {
+      updateData();
+    }, 350);
   });
 
   // append all inner blocks to controls block
