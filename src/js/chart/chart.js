@@ -1,15 +1,20 @@
 import Chart from "../../../node_modules/chart.js/dist/Chart.min.js"
 
 export default function(stateControls, region) {
-  // window.onload = () => {
-  const ctx = document.querySelector('#chart').getContext('2d');
-
+  let chart;
+  let destrChart = document.querySelector('#chart')
+  destrChart.remove();
+  document.querySelector('#wrapper-chart').innerHTML='<canvas id="chart"></canvas>';
+  let ctx = document.querySelector('#chart').getContext('2d');
   let state = []; //axis y
   let arrTotalCases = [];
   let arrDates = []; //axis x
   let arrTotalDeaths = [];
   let arrTotalRecovered = [];
   let title;
+  let chartConfig = {};
+
+  
 
 if (region === undefined || region === "World") {
   fetch("https://covid19-api.org/api/timeline")//for all world
@@ -28,10 +33,10 @@ if (region === undefined || region === "World") {
     for (let i=data.length - 1; i>0; i--) {       //get arr of total recovered
       arrTotalRecovered.push(data[i].total_recovered);
     };
-
       if (stateControls === "cases" && region === "World" ) {
         state = arrTotalCases;
         title = 'total cases'
+        
       } else if (stateControls === "deaths" && region === "World" ) {
         state = arrTotalDeaths;
         title = 'total death'
@@ -43,7 +48,7 @@ if (region === undefined || region === "World") {
         title = 'total cases'
       } 
 
-      let chartConfig = {
+       chartConfig = {
         type: 'line',
         data: {
             labels: arrDates, //axis x
@@ -70,7 +75,8 @@ if (region === undefined || region === "World") {
         }
     }
 
-    const chart = new Chart(ctx, chartConfig);
+    chart = new Chart(ctx, chartConfig);
+    chart.update();
   });
   
  } else {
@@ -78,7 +84,6 @@ if (region === undefined || region === "World") {
    fetch(`https://disease.sh/v3/covid-19/historical/${region}?lastdays=all`) //for specific country
    .then((response) => response.json())
    .then((data) => {
-    
     //console.log(data);
     let keys = Object.keys(data.timeline.cases);
     for (let i = 0, l = keys.length; i < l; i++) {
@@ -110,8 +115,8 @@ if (region === undefined || region === "World") {
     state = arrTotalCases;
     title = `total cases ${region}`
    }
-   //console.log(state);
-    let chartConfig = {
+  
+     chartConfig = {
      type: 'line',
      data: {
         labels: arrDates, //axis x
@@ -137,11 +142,7 @@ if (region === undefined || region === "World") {
         }
     }
    }
-
-   const chart = new Chart(ctx, chartConfig);
-   
+   chart = new Chart(ctx, chartConfig);
    });
-
  }
-
 }
