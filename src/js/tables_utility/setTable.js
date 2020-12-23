@@ -12,6 +12,18 @@ export default function (tableClass) {
   // set table depends on argument passed
   // first column same for all tables
   const columnDefs = [
+    // {
+    //   cellRenderer: function (params) {
+    //     console.log(params)
+    //     const flag = params.data.flag;
+
+    //   },
+    //   headerName: "-",
+    //   field: "flag",
+    //   sortable: false,
+    //   lockPosition: true,
+    //   flex: 0.3,
+    // },
     {
       headerName: "Country",
       field: "Country",
@@ -25,8 +37,75 @@ export default function (tableClass) {
   let eGridDiv;
   let rowData;
   if (properties[`${tableClass}Table`].units !== "absolute") {
-    //! TODO: set up table with relative here, 3 blocks for 3 tables?
-    console.log("we are in changed unit");
+    console.log(properties.apiDataRelative);
+    // set empty tables if selected country
+    if (properties.region !== "World") {
+      columnDefs[0].field = "----";
+      columnDefs[0].headerName = "----";
+      columnDefs[0].sortable = false;
+      columnDefs.push({
+        headerName: "----",
+        field: "----",
+        sortable: false,
+        lockPosition: true,
+        flex: 1,
+      });
+      eGridDiv = currentTable;
+      rowData = [];
+    }
+
+    // set cases table
+    else if (tableClass === "cases") {
+      const fieldName =
+        properties.period === "All time" ? "TotalConfirmedR" : "NewConfirmedR";
+      columnDefs.push({
+        headerName: "Cases",
+        field: fieldName,
+        sortable: true,
+        lockPosition: true,
+        flex: 1,
+      });
+      columnDefs[1].cellClass = "stats__table--cases-column";
+      eGridDiv = document.querySelector(".stats__table--cases");
+      rowData = properties.apiDataRelative;
+    }
+
+    // set deaths table
+    else if (tableClass === "deaths") {
+      const fieldName =
+        properties.period === "All time" ? "TotalDeathsR" : "NewDeathsR";
+      columnDefs.push({
+        headerName: "Deaths",
+        field: fieldName,
+        sortable: true,
+        lockPosition: true,
+        flex: 1,
+      });
+      columnDefs[1].cellClass = "stats__table--deaths-column";
+      eGridDiv = document.querySelector(".stats__table--deaths");
+      rowData = properties.apiDataRelative;
+    }
+
+    // set recovered table
+    else if (tableClass === "recovered") {
+      const fieldName =
+        properties.period === "All time" ? "TotalRecoveredR" : "NewRecoveredR";
+      columnDefs.push({
+        headerName: "Recovered",
+        field: fieldName,
+        sortable: true,
+        lockPosition: true,
+        flex: 1,
+      });
+      columnDefs[1].cellClass = "stats__table--recovered-column";
+      eGridDiv = document.querySelector(".stats__table--recovered");
+      rowData = properties.apiDataRelative;
+    }
+
+    // throw error on wrong argument
+    else {
+      throw new Error("wron argument passed to setTable function");
+    }
   } else {
     console.log("we are in main setTable");
     // set empty tables if selected country
@@ -97,7 +176,6 @@ export default function (tableClass) {
     else {
       throw new Error("wron argument passed to setTable function");
     }
-    
   }
 
   // let the grid know which columns and what data to use

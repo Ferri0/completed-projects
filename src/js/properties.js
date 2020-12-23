@@ -3,6 +3,7 @@
 export default {
   apiData: null,
   apiDataCountries: null,
+  apiDataRelative: null,
   region: "World",
   period: "All time",
   graphDisplay: "cases",
