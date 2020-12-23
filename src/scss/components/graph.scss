@@ -15,9 +15,9 @@
     @include size(calc(50vw - 17px), calc(50vw - 20px));
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1400px) and (min-height: 950px) {
     order: 4;
-    height: calc(30vh - 9px);
+    height: calc(40vh - 9px);
     width: 610px;
     position: absolute;
     bottom: 110px;
