@@ -69,7 +69,5 @@ export default function (country) {
     }
     return null;
   });
-  // console.log(populationArray.name);
-  // console.log(populationArray.name)
   return populationArray.name;
 }

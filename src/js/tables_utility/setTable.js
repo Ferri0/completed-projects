@@ -1,6 +1,5 @@
 import { Grid } from "ag-grid-community";
 import properties from "../properties";
-// import updateData from "../utility/updateData";
 
 // run each time when need to change table data
 // get table class of table needed to change
@@ -12,18 +11,6 @@ export default function (tableClass) {
   // set table depends on argument passed
   // first column same for all tables
   const columnDefs = [
-    // {
-    //   cellRenderer: function (params) {
-    //     console.log(params)
-    //     const flag = params.data.flag;
-
-    //   },
-    //   headerName: "-",
-    //   field: "flag",
-    //   sortable: false,
-    //   lockPosition: true,
-    //   flex: 0.3,
-    // },
     {
       headerName: "Country",
       field: "Country",
@@ -37,7 +24,6 @@ export default function (tableClass) {
   let eGridDiv;
   let rowData;
   if (properties[`${tableClass}Table`].units !== "absolute") {
-    console.log(properties.apiDataRelative);
     // set empty tables if selected country
     if (properties.region !== "World") {
       columnDefs[0].field = "----";
@@ -107,7 +93,6 @@ export default function (tableClass) {
       throw new Error("wron argument passed to setTable function");
     }
   } else {
-    console.log("we are in main setTable");
     // set empty tables if selected country
     if (properties.region !== "World") {
       columnDefs[0].field = "----";
@@ -183,15 +168,6 @@ export default function (tableClass) {
     columnDefs: columnDefs,
     rowData: rowData,
   };
-
-  //! TODO
-  // gridOptions.onCellClicked = (e) => {
-  //   properties.region = e.value;
-  //   updateData();
-  //   //   properties.regionDropdown.value = e.value;
-  //   // properties.regionDropdown.open();
-  //   // properties.regionDropdown.close();
-  // };
 
   // build table with created parameters
   new Grid(eGridDiv, gridOptions);

@@ -12,7 +12,7 @@ import setTableControls from "./tables_utility/setTableControls";
 import setGraphControls from "./utility/setGraphControls";
 import setFullScrBtns from "./components/setFullScrBtns";
 import updateData from "./utility/updateData";
-import chart from "../js/chart/chart"; 
+import chart from "./chart/chart";
 import viewMap from "./components/map";
 import setApiDataRelative from "./utility/setApiDataRelative";
 

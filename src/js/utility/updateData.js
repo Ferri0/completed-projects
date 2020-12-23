@@ -2,7 +2,7 @@ import properties from "../properties";
 import isStatusChanged from "./isStatusChanged";
 import updateCounter from "../tables_utility/updateCounter";
 import setTable from "../tables_utility/setTable";
-import chart from "../chart/chart"
+import chart from "../chart/chart";
 
 /*
  * run this each time any property of page changes,
@@ -54,9 +54,9 @@ export default (function () {
       lastUpdateDate.innerText = properties.apiData.Date.slice(0, 10);
       lastUpdateTime.innerText = properties.apiData.Date.slice(11, -1);
     }
-    
-    if (isStatusChanged() || properties.region !== undefined ){
-      chart(properties.graphDisplay,properties.region, properties.period);
+
+    if (isStatusChanged() || properties.region !== undefined) {
+      chart(properties.graphDisplay, properties.region, properties.period);
     }
   };
 })();
