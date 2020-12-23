@@ -104,12 +104,12 @@ export default function viewMap() {
         }
       });
       if (totalCases === undefined) {
-        totalCases = "Not information";
-        totalDeath = "Not information";
-        totalRecovered = "Not information";
-        newConfirmed = "Not information";
-        newDeaths = "Not information";
-        newRecovered = "Not information";
+        totalCases = 0;
+        totalDeath = 0;
+        totalRecovered = 0;
+        newConfirmed = 0;
+        newDeaths = 0;
+        newRecovered = 0;
       }
 
       this.div.innerHTML = `<h4>Country: ${countryName}</h4>
