@@ -51,33 +51,26 @@
     <!-- last-updated block -->
     <div class="last-update">
       <span class="last-update--title">Last update:</span>
-      <span class="last-update--date"></span>
-      <span class="last-update--time"></span>
+      <span class="last-update--date">19.12.2020</span>
     </div>
 
     <!-- map block -->
-    <div class="map" id="map">
+    <div class="map">
+      map block<br>
+      styles in scss/components/map.scss<br>
     </div>
 
     <!-- graph block -->
     <div class="graph">
-      <div id="wrapper-chart">
-       <canvas id="chart">
-       </canvas>
-      </div>
-      <div class="graph-controls">
-        <button class="graph-controls__left graph-controls--disabled">
-          <img src="./img/arrow.svg" alt="arrow-right">
-        </button>
-        <div class="graph-controls__text">
-          <div class="graph-controls__text--first-property graph-controls__text--visible" style="left: 0;">Cases</div>
-          <div class="graph-controls__text--second-property" style="left: -100%;">Deaths</div>
-          <div class="graph-controls__text--third-property" style="left: -200%;">Recovered</div>
-        </div>
-        <button class="graph-controls__right">
-          <img src="./img/arrow.svg" alt="arrow-right">
-        </button>
-      </div>
+      <canvas id="chart">
+        <div>
+           <button id="add"> Add</button>
+           <button id="remove">Remove</button>
+           <input type="text" placeholder="name" id="name">
+       </div> -->
+     </canvas> 
+      <!-- graph block<br>
+      styles in scss/components/graph.scss<br> -->
     </div>
   </main>
 
@@ -88,6 +81,12 @@
       <a href="https://github.com/spanderok">github.com/spanderok</a>
       <a href="https://github.com/SuhodolecA">github.com/SuhodolecA</a>
     </div>
+    <div class="stats__table stats__table--recovered ag-theme-alpine-dark"></div>
+  </div>
+  
+  <!-- chart -->
+  
+  
     <a href="https://rs.school/">
       <img class="footer__rss-logo" src="./img/rs_school_js.svg" alt="rsschool logo">
     </a>
