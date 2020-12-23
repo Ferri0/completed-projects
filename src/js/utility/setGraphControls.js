@@ -36,7 +36,7 @@ export default function () {
       thirdProp.style.left = "-100%";
     }
 
-    chart(properties.graphDisplay,properties.region); // update chart
+    chart(properties.graphDisplay,properties.region, properties.period); // update chart
   });
 
   rightButton.addEventListener("click", () => {
@@ -60,6 +60,6 @@ export default function () {
       firstProp.style.left = "+200%";
     }
 
-    chart(properties.graphDisplay,properties.region); // update chart
+    chart(properties.graphDisplay,properties.region, properties.period); // update chart
   });
 }
