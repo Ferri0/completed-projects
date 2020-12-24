@@ -3,14 +3,14 @@
   position:relative;
 }
 
-.dropdown {
+.dropdownChart {
   position: absolute;
   top: 2px;
   left: 2px;
   vertical-align: top;
 }
 
-.dropdown {
+.dropdownChart {
   display: inline-block;
   overflow: hidden;
   height: 28px;
@@ -27,7 +27,7 @@
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
 }
 
-.dropdown:before, .dropdown:after {
+.dropdownChart:before, .dropdownChart:after {
   content: '';
   position: absolute;
   z-index: 2;
@@ -40,18 +40,18 @@
   pointer-events: none;
 }
 
-.dropdown:before {
+.dropdownChart:before {
   border-bottom-style: solid;
   border-top: none;
 }
 
-.dropdown:after {
+.dropdownChart:after {
   margin-top: 7px;
   border-top-style: solid;
   border-bottom: none;
 }
 
-.dropdown-select {
+.dropdownChart-select {
   position: relative;
   width: 130%;
   margin: 0;
@@ -67,7 +67,7 @@
   -webkit-appearance: none;
 }
 
-.dropdown-select:focus {
+.dropdownChart-select:focus {
   z-index: 3;
   width: 100%;
   color: #ffffff;
@@ -76,7 +76,7 @@
   outline-offset: -2px;
 }
 
-.dropdown-select > option {
+.dropdownChart-select > option {
   margin: 3px;
   padding: 6px 8px;
   text-shadow: none;
@@ -87,22 +87,22 @@
 
 /* Fix for IE 8 putting the arrows behind the select element. */
 
-.lt-ie9 .dropdown {
+.lt-ie9 .dropdownChart {
   z-index: 1;
 }
 
-.lt-ie9 .dropdown-select {
+.lt-ie9 .dropdownChart-select {
   z-index: -1;
 }
 
-.lt-ie9 .dropdown-select:focus {
+.lt-ie9 .dropdownChart-select:focus {
   z-index: 3;
 }
 
 /* Dirty fix for Firefox adding padding where it shouldn't. */
 
 @-moz-document url-prefix() {
-  .dropdown-select {
+  .dropdownChart-select {
     padding-left: 6px;
   }
 }

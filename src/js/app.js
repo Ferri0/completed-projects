@@ -16,6 +16,7 @@ import chart from "./chart/chart";
 import viewMap from "./components/map";
 import setApiDataRelative from "./utility/setApiDataRelative";
 import properties from "./properties";
+import setDropChart from "./utility/setDropChart";
 
 // callback function as arg to set default page after fetches completed
 getApiData(updateData, viewMap, setDropdowns, setApiDataRelative);
@@ -27,6 +28,9 @@ setTableControls("recoveredTable");
 
 // set up graph controls
 setGraphControls();
+
+// set up chart drop
+setDropChart();
 
 // display chart
 chart();
