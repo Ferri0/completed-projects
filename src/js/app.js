@@ -19,7 +19,7 @@ import properties from "./properties";
 import setDropChart from "./utility/setDropChart";
 
 // callback function as arg to set default page after fetches completed
-getApiData(updateData, viewMap, setDropdowns, setApiDataRelative);
+getApiData(setApiDataRelative, updateData, viewMap, setDropdowns);
 
 // display and set up controls for each of three tables
 setTableControls("casesTable");
@@ -37,4 +37,3 @@ chart();
 
 // display and set up fullscreen buttons for main blocks
 setFullScrBtns();
-console.log(properties);
