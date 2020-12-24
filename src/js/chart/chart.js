@@ -575,7 +575,7 @@ if (value === 'absolute' || value === undefined) {
       let countryObj = properties.apiDataRelative.find((e) => {
         if (e.Country === region) return e;
        });
-      population = countryObj.population;
+     let population = countryObj.population;
       fetch(`https://disease.sh/v3/covid-19/historical/${region}?lastdays=all`) // for specific country
         .then((response) => response.json())
         .then((data) => {
