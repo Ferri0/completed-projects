@@ -10,7 +10,6 @@ import chart from "../chart/chart";
  * change page depends on new properties values
  */
 export default (function () {
-  console.log(properties)
   // previous properties values
   // deafult values is null to set all values after page load
   let prevCasesTableUnits = null;
