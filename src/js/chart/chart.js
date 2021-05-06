@@ -1,13 +1,13 @@
-import Chart from "../../../node_modules/chart.js/dist/Chart.min";
-import properties from "../properties";
+import Chart from '../../../node_modules/chart.js/dist/Chart.min';
+import properties from '../properties';
 
 export default function (stateControls, region, period, value) {
   let chart;
-  const destrChart = document.querySelector("#chart");
+  const destrChart = document.querySelector('#chart');
   destrChart.remove();
-  document.querySelector("#wrapper-chart").innerHTML =
+  document.querySelector('#wrapper-chart').innerHTML =
     '<canvas id="chart"></canvas>';
-  const ctx = document.querySelector("#chart").getContext("2d");
+  const ctx = document.querySelector('#chart').getContext('2d');
   let state = []; // axis y
   let arrTotalCases = [];
   let arrDates = []; // axis x
@@ -16,41 +16,41 @@ export default function (stateControls, region, period, value) {
   let color;
   let title;
   let chartConfig = {};
-  if (value === "absolute" || value === undefined) {
-    if (period === "All time" || period === undefined) {
-      if (region === undefined || region === "World") {
-        fetch("https://disease.sh/v3/covid-19/historical/all") // for all world
+  if (value === 'absolute' || value === undefined) {
+    if (period === 'All time' || period === undefined) {
+      if (region === undefined || region === 'World') {
+        fetch('https://disease.sh/v3/covid-19/historical/all') // for all world
           .then((response) => response.json())
           .then((data) => {
             arrDates = Object.keys(data.deaths);
             arrTotalCases = Object.values(data.cases);
             arrTotalDeaths = Object.values(data.deaths);
             arrTotalRecovered = Object.values(data.recovered);
-            if (stateControls === "cases" && region === "World") {
+            if (stateControls === 'cases' && region === 'World') {
               state = arrTotalCases;
-              title = "total cases for the last month";
-              color = "rgba(255, 211, 0, 0.8)";
-            } else if (stateControls === "deaths" && region === "World") {
+              title = 'total cases for the last month';
+              color = 'rgba(255, 211, 0, 0.8)';
+            } else if (stateControls === 'deaths' && region === 'World') {
               state = arrTotalDeaths;
-              title = "total death for the last month";
-              color = "rgba(124, 10, 10, 0.8)";
-            } else if (stateControls === "recovered" && region === "World") {
+              title = 'total death for the last month';
+              color = 'rgba(124, 10, 10, 0.8)';
+            } else if (stateControls === 'recovered' && region === 'World') {
               state = arrTotalRecovered;
-              title = "total recovered for the last month";
-              color = "rgba(57, 137, 48, 0.8)";
+              title = 'total recovered for the last month';
+              color = 'rgba(57, 137, 48, 0.8)';
             } else if (stateControls === undefined && region === undefined) {
               state = arrTotalCases;
-              title = "total cases for the last month";
-              color = "rgba(255, 211, 0, 0.8)";
+              title = 'total cases for the last month';
+              color = 'rgba(255, 211, 0, 0.8)';
             }
 
             chartConfig = {
-              type: "line",
+              type: 'line',
               data: {
                 labels: arrDates, // axis x
                 datasets: [
                   {
-                    label: "",
+                    label: '',
                     data: state, // axis y
                     backgroundColor: [color],
                   },
@@ -100,31 +100,31 @@ export default function (stateControls, region, period, value) {
               arrTotalRecovered.push(data.timeline.recovered[keys[i]]);
             }
 
-            if (stateControls === "cases") {
+            if (stateControls === 'cases') {
               state = arrTotalCases;
               title = `total cases ${region} summary`;
-              color = "rgba(255, 211, 0, 0.8)";
-            } else if (stateControls === "deaths") {
+              color = 'rgba(255, 211, 0, 0.8)';
+            } else if (stateControls === 'deaths') {
               state = arrTotalDeaths;
               title = `total deaths ${region} summary`;
-              color = "rgba(124, 10, 10, 0.8)";
-            } else if (stateControls === "recovered") {
+              color = 'rgba(124, 10, 10, 0.8)';
+            } else if (stateControls === 'recovered') {
               state = arrTotalRecovered;
               title = `total recovered ${region} summary`;
-              color = "rgba(57, 137, 48, 0.8)";
+              color = 'rgba(57, 137, 48, 0.8)';
             } else if (stateControls === undefined) {
               state = arrTotalCases;
               title = `total cases ${region} summary`;
-              color = "rgba(255, 211, 0, 0.8)";
+              color = 'rgba(255, 211, 0, 0.8)';
             }
 
             chartConfig = {
-              type: "line",
+              type: 'line',
               data: {
                 labels: arrDates, // axis x
                 datasets: [
                   {
-                    label: "",
+                    label: '',
                     data: state, // axis y
                     backgroundColor: [color],
                   },
@@ -150,8 +150,8 @@ export default function (stateControls, region, period, value) {
           });
       }
     } else {
-      if (region === undefined || region === "World") {
-        fetch("https://disease.sh/v3/covid-19/historical/all") // for all world
+      if (region === undefined || region === 'World') {
+        fetch('https://disease.sh/v3/covid-19/historical/all') // for all world
           .then((response) => response.json())
           .then((data) => {
             arrDates = Object.keys(data.deaths);
@@ -184,31 +184,31 @@ export default function (stateControls, region, period, value) {
               );
             }
 
-            if (stateControls === "cases" && region === "World") {
+            if (stateControls === 'cases' && region === 'World') {
               state = arrTotalCases;
-              title = "total historical daily cases ";
-              color = "rgba(255, 211, 0, 0.8)";
-            } else if (stateControls === "deaths" && region === "World") {
+              title = 'total historical daily cases ';
+              color = 'rgba(255, 211, 0, 0.8)';
+            } else if (stateControls === 'deaths' && region === 'World') {
               state = arrTotalDeaths;
-              title = "total historical daily death";
-              color = "rgba(124, 10, 10, 0.8)";
-            } else if (stateControls === "recovered" && region === "World") {
+              title = 'total historical daily death';
+              color = 'rgba(124, 10, 10, 0.8)';
+            } else if (stateControls === 'recovered' && region === 'World') {
               state = arrTotalRecovered;
-              title = "total historical daily recovered";
-              color = "rgba(57, 137, 48, 0.8)";
+              title = 'total historical daily recovered';
+              color = 'rgba(57, 137, 48, 0.8)';
             } else if (stateControls === undefined && region === undefined) {
               state = arrTotalCases;
-              title = "total historical daily cases";
-              color = "rgba(255, 211, 0, 0.8)";
+              title = 'total historical daily cases';
+              color = 'rgba(255, 211, 0, 0.8)';
             }
 
             chartConfig = {
-              type: "line",
+              type: 'line',
               data: {
                 labels: arrDates, // axis x
                 datasets: [
                   {
-                    label: "",
+                    label: '',
                     data: state, // axis y
                     backgroundColor: [color],
                   },
@@ -279,31 +279,31 @@ export default function (stateControls, region, period, value) {
               );
             }
 
-            if (stateControls === "cases") {
+            if (stateControls === 'cases') {
               state = arrTotalCases;
               title = `historical daily cases ${region}`;
-              color = "rgba(255, 211, 0, 0.8)";
-            } else if (stateControls === "deaths") {
+              color = 'rgba(255, 211, 0, 0.8)';
+            } else if (stateControls === 'deaths') {
               state = arrTotalDeaths;
               title = `historical daily deaths ${region}`;
-              color = "rgba(124, 10, 10, 0.8)";
-            } else if (stateControls === "recovered") {
+              color = 'rgba(124, 10, 10, 0.8)';
+            } else if (stateControls === 'recovered') {
               state = arrTotalRecovered;
               title = `historical daily recovered ${region}`;
-              color = "rgba(57, 137, 48, 0.8)";
+              color = 'rgba(57, 137, 48, 0.8)';
             } else if (stateControls === undefined) {
               state = arrTotalCases;
               title = `historical daily cases ${region}`;
-              color = "rgba(255, 211, 0, 0.8)";
+              color = 'rgba(255, 211, 0, 0.8)';
             }
 
             chartConfig = {
-              type: "line",
+              type: 'line',
               data: {
                 labels: arrDates, // axis x
                 datasets: [
                   {
-                    label: "",
+                    label: '',
                     data: state, // axis y
                     backgroundColor: [color],
                   },
@@ -329,18 +329,18 @@ export default function (stateControls, region, period, value) {
           });
       }
     }
-  } else if (value === "per") {
-    if (period === "All time" || period === undefined) {
-      if (region === undefined || region === "World") {
+  } else if (value === 'per') {
+    if (period === 'All time' || period === undefined) {
+      if (region === undefined || region === 'World') {
         const population = 7830458560;
-        fetch("https://disease.sh/v3/covid-19/historical/all") // for all world
+        fetch('https://disease.sh/v3/covid-19/historical/all') // for all world
           .then((response) => response.json())
           .then((data) => {
-            let arrDates = Object.keys(data.deaths);
+            // eslint-disable-next-line no-shadow
+            const arrDates = Object.keys(data.deaths);
             const arrCases = Object.values(data.cases);
             const arrDeaths = Object.values(data.deaths);
             const arrRecovered = Object.values(data.recovered);
-            console.log(arrCases[1]);
 
             for (let i = arrCases.length - 1; i > 0; i -= 1) {
               // get arr of total cases
@@ -354,31 +354,31 @@ export default function (stateControls, region, period, value) {
               // get arr of total recovered
               arrTotalRecovered.push((arrRecovered[i] * 100000) / population);
             }
-            if (stateControls === "cases" && region === "World") {
+            if (stateControls === 'cases' && region === 'World') {
               state = arrTotalCases;
-              title = "total cases summary per 100 000 ";
-              color = "rgba(255, 211, 0, 0.8)";
-            } else if (stateControls === "deaths" && region === "World") {
+              title = 'total cases summary per 100 000 ';
+              color = 'rgba(255, 211, 0, 0.8)';
+            } else if (stateControls === 'deaths' && region === 'World') {
               state = arrTotalDeaths;
-              title = "total death summary per 100 000";
-              color = "rgba(124, 10, 10, 0.8)";
-            } else if (stateControls === "recovered" && region === "World") {
+              title = 'total death summary per 100 000';
+              color = 'rgba(124, 10, 10, 0.8)';
+            } else if (stateControls === 'recovered' && region === 'World') {
               state = arrTotalRecovered;
-              title = "total recovered summary per 100 000";
-              color = "rgba(57, 137, 48, 0.8)";
+              title = 'total recovered summary per 100 000';
+              color = 'rgba(57, 137, 48, 0.8)';
             } else if (stateControls === undefined && region === undefined) {
               state = arrTotalCases;
-              title = "total cases summary per 100 000";
-              color = "rgba(255, 211, 0, 0.8)";
+              title = 'total cases summary per 100 000';
+              color = 'rgba(255, 211, 0, 0.8)';
             }
 
             chartConfig = {
-              type: "line",
+              type: 'line',
               data: {
                 labels: arrDates, // axis x
                 datasets: [
                   {
-                    label: "",
+                    label: '',
                     data: state, // axis y
                     backgroundColor: [color],
                   },
@@ -406,10 +406,10 @@ export default function (stateControls, region, period, value) {
           });
       } else {
         const countryObj = properties.apiDataRelative.find((e) => {
-          if (e.Country === region) return e;
+          return e.Country === region;
         });
         // const {population: population} = countryObj;
-        const population = countryObj.population;
+        const {population} = countryObj;
         fetch(
           `https://disease.sh/v3/covid-19/historical/${region}?lastdays=all`
         ) // for specific country
@@ -439,31 +439,31 @@ export default function (stateControls, region, period, value) {
               );
             }
 
-            if (stateControls === "cases") {
+            if (stateControls === 'cases') {
               state = arrTotalCases;
               title = `total cases ${region} summary per 100 000`;
-              color = "rgba(255, 211, 0, 0.8)";
-            } else if (stateControls === "deaths") {
+              color = 'rgba(255, 211, 0, 0.8)';
+            } else if (stateControls === 'deaths') {
               state = arrTotalDeaths;
               title = `total deaths ${region} summary per 100 000`;
-              color = "rgba(124, 10, 10, 0.8)";
-            } else if (stateControls === "recovered") {
+              color = 'rgba(124, 10, 10, 0.8)';
+            } else if (stateControls === 'recovered') {
               state = arrTotalRecovered;
               title = `total recovered ${region} summary per 100 000`;
-              color = "rgba(57, 137, 48, 0.8)";
+              color = 'rgba(57, 137, 48, 0.8)';
             } else if (stateControls === undefined) {
               state = arrTotalCases;
               title = `total cases ${region} summary per 100 000`;
-              color = "rgba(255, 211, 0, 0.8)";
+              color = 'rgba(255, 211, 0, 0.8)';
             }
 
             chartConfig = {
-              type: "line",
+              type: 'line',
               data: {
                 labels: arrDates, // axis x
                 datasets: [
                   {
-                    label: "",
+                    label: '',
                     data: state, // axis y
                     backgroundColor: [color],
                   },
@@ -489,9 +489,9 @@ export default function (stateControls, region, period, value) {
           });
       }
     } else {
-      if (region === undefined || region === "World") {
+      if (region === undefined || region === 'World') {
         const population = 7830458560;
-        fetch("https://disease.sh/v3/covid-19/historical/all") // for all world
+        fetch('https://disease.sh/v3/covid-19/historical/all') // for all world
           .then((response) => response.json())
           .then((data) => {
             arrDates = Object.keys(data.deaths);
@@ -529,31 +529,31 @@ export default function (stateControls, region, period, value) {
                   population
               );
             }
-            if (stateControls === "cases" && region === "World") {
+            if (stateControls === 'cases' && region === 'World') {
               state = arrTotalCases;
-              title = "total historical daily cases per 100 000";
-              color = "rgba(255, 211, 0, 0.8)";
-            } else if (stateControls === "deaths" && region === "World") {
+              title = 'total historical daily cases per 100 000';
+              color = 'rgba(255, 211, 0, 0.8)';
+            } else if (stateControls === 'deaths' && region === 'World') {
               state = arrTotalDeaths;
-              title = "total historical daily death per 100 000";
-              color = "rgba(124, 10, 10, 0.8)";
-            } else if (stateControls === "recovered" && region === "World") {
+              title = 'total historical daily death per 100 000';
+              color = 'rgba(124, 10, 10, 0.8)';
+            } else if (stateControls === 'recovered' && region === 'World') {
               state = arrTotalRecovered;
-              title = "total historical daily recovered per 100 000";
-              color = "rgba(57, 137, 48, 0.8)";
+              title = 'total historical daily recovered per 100 000';
+              color = 'rgba(57, 137, 48, 0.8)';
             } else if (stateControls === undefined && region === undefined) {
               state = arrTotalCases;
-              title = "total historical daily cases per 100 000";
-              color = "rgba(255, 211, 0, 0.8)";
+              title = 'total historical daily cases per 100 000';
+              color = 'rgba(255, 211, 0, 0.8)';
             }
 
             chartConfig = {
-              type: "line",
+              type: 'line',
               data: {
                 labels: arrDates, // axis x
                 datasets: [
                   {
-                    label: "",
+                    label: '',
                     data: state, // axis y
                     backgroundColor: [color],
                   },
@@ -581,10 +581,10 @@ export default function (stateControls, region, period, value) {
           });
       } else {
         const countryObj = properties.apiDataRelative.find((e) => {
-          if (e.Country === region) return e;
+          return e.Country === region;
         });
         // const {population: population} = countryObj;
-        const population = countryObj.population;
+        const {population} = countryObj;
         fetch(
           `https://disease.sh/v3/covid-19/historical/${region}?lastdays=all`
         ) // for specific country
@@ -635,31 +635,31 @@ export default function (stateControls, region, period, value) {
               );
             }
 
-            if (stateControls === "cases") {
+            if (stateControls === 'cases') {
               state = arrTotalCases;
               title = `historical daily cases ${region} per 100 000`;
-              color = "rgba(255, 211, 0, 0.8)";
-            } else if (stateControls === "deaths") {
+              color = 'rgba(255, 211, 0, 0.8)';
+            } else if (stateControls === 'deaths') {
               state = arrTotalDeaths;
               title = `historical daily deaths ${region} per 100 000`;
-              color = "rgba(124, 10, 10, 0.8)";
-            } else if (stateControls === "recovered") {
+              color = 'rgba(124, 10, 10, 0.8)';
+            } else if (stateControls === 'recovered') {
               state = arrTotalRecovered;
               title = `historical daily recovered ${region} per 100 000`;
-              color = "rgba(57, 137, 48, 0.8)";
+              color = 'rgba(57, 137, 48, 0.8)';
             } else if (stateControls === undefined) {
               state = arrTotalCases;
               title = `historical daily cases ${region} per 100 000`;
-              color = "rgba(255, 211, 0, 0.8)";
+              color = 'rgba(255, 211, 0, 0.8)';
             }
 
             chartConfig = {
-              type: "line",
+              type: 'line',
               data: {
                 labels: arrDates, // axis x
                 datasets: [
                   {
-                    label: "",
+                    label: '',
                     data: state, // axis y
                     backgroundColor: [color],
                   },

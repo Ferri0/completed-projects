@@ -1,12 +1,5 @@
 {
-  "spellright.language": [
-    "en",
-    "ru"
-  ],
-  "spellright.documentTypes": [
-    "markdown",
-    "latex",
-    "plaintext"
-  ],
+  "spellright.language": ["en", "ru"],
+  "spellright.documentTypes": ["markdown", "latex", "plaintext"],
   "liveServer.settings.port": 5501
 }

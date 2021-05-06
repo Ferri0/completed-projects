@@ -1,31 +1,31 @@
-import L from "leaflet";
-import WorldData from "geojson-world-map";
-import properties from "../properties";
+import L from 'leaflet';
+import WorldData from 'geojson-world-map';
+import properties from '../properties';
 
 // rename countries from worldData
-WorldData.features[203].properties.name = "United States of America";
-WorldData.features[167].properties.name = "Russian Federation";
-WorldData.features[98].properties.name = "Iran, Islamic Republic of";
-WorldData.features[113].properties.name = "Korea (South)";
-WorldData.features[208].properties.name = "Viet Nam";
-WorldData.features[55].properties.name = "Czech Republic";
-WorldData.features[187].properties.name = "Syrian Arab Republic (Syria)";
-WorldData.features[128].properties.name = "Macedonia, Republic of";
-WorldData.features[27].properties.name = "Bosnia and Herzegovina";
-WorldData.features[3].properties.name = "Western Sahara";
-WorldData.features[37].properties.name = "Central African Republic";
-WorldData.features[171].properties.name = "South Sudan";
-WorldData.features[45].properties.name = "Congo (Brazzaville)";
-WorldData.features[81].properties.name = "Equatorial Guinea";
-WorldData.features[44].properties.name = "Congo (Kinshasa)";
-WorldData.features[199].properties.name = "Tanzania, United Republic of";
-WorldData.features[60].properties.name = "Dominican Republic";
-WorldData.features[206].properties.name = "Venezuela (Bolivarian Republic)";
+WorldData.features[203].properties.name = 'United States of America';
+WorldData.features[167].properties.name = 'Russian Federation';
+WorldData.features[98].properties.name = 'Iran, Islamic Republic of';
+WorldData.features[113].properties.name = 'Korea (South)';
+WorldData.features[208].properties.name = 'Viet Nam';
+WorldData.features[55].properties.name = 'Czech Republic';
+WorldData.features[187].properties.name = 'Syrian Arab Republic (Syria)';
+WorldData.features[128].properties.name = 'Macedonia, Republic of';
+WorldData.features[27].properties.name = 'Bosnia and Herzegovina';
+WorldData.features[3].properties.name = 'Western Sahara';
+WorldData.features[37].properties.name = 'Central African Republic';
+WorldData.features[171].properties.name = 'South Sudan';
+WorldData.features[45].properties.name = 'Congo (Brazzaville)';
+WorldData.features[81].properties.name = 'Equatorial Guinea';
+WorldData.features[44].properties.name = 'Congo (Kinshasa)';
+WorldData.features[199].properties.name = 'Tanzania, United Republic of';
+WorldData.features[60].properties.name = 'Dominican Republic';
+WorldData.features[206].properties.name = 'Venezuela (Bolivarian Republic)';
 
 export default function viewMap() {
-  const map = L.map("map").setView([40, 10], 2);
+  const map = L.map('map').setView([40, 10], 2);
   L.tileLayer(
-    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
+    'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
     {
       maxZoom: 10,
       minZoom: 1,
@@ -33,7 +33,7 @@ export default function viewMap() {
       attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      id: "mapbox/light-v9",
+      id: 'mapbox/light-v9',
       tileSize: 512,
       zoomOffset: -1,
     }
@@ -52,34 +52,34 @@ export default function viewMap() {
       param = d;
     }
     if (param > 500000) {
-      return "#800026";
+      return '#800026';
     }
     if (param > 300000) {
-      return "#BD0026";
+      return '#BD0026';
     }
     if (param > 100000) {
-      return "#E31A1C";
+      return '#E31A1C';
     }
     if (param > 50000) {
-      return "#FC4E2A";
+      return '#FC4E2A';
     }
     if (param > 25000) {
-      return "#FD8D3C";
+      return '#FD8D3C';
     }
     if (param > 12500) {
-      return "#FEB24C";
+      return '#FEB24C';
     }
     if (param > 7500) {
-      return "#FED976";
+      return '#FED976';
     }
-    return "#FFEDA0";
+    return '#FFEDA0';
   }
 
   // control that shows state info on hover
   const info = L.control();
 
   info.onAdd = function () {
-    this.div = L.DomUtil.create("div", "info");
+    this.div = L.DomUtil.create('div', 'info');
     this.update();
     return this.div;
   };
@@ -133,8 +133,8 @@ export default function viewMap() {
     return {
       weight: 2,
       opacity: 1,
-      color: "white",
-      dashArray: "3",
+      color: 'white',
+      dashArray: '3',
       fillOpacity: 0.7,
       fillColor: getColor(feature.properties),
     };
@@ -144,8 +144,8 @@ export default function viewMap() {
     const layer = e.target;
     layer.setStyle({
       weight: 2,
-      color: "#666",
-      dashArray: "",
+      color: '#666',
+      dashArray: '',
       fillOpacity: 0.7,
     });
 
@@ -180,10 +180,10 @@ export default function viewMap() {
     'Covid data &copy; <a href="https://covid19api.com/" target="_blank">Covid API</a>'
   );
 
-  const legend = L.control({ position: "bottomright" });
+  const legend = L.control({position: 'bottomright'});
 
   legend.onAdd = function () {
-    const div = L.DomUtil.create("div", "info legend");
+    const div = L.DomUtil.create('div', 'info legend');
     const grades = [0, 7500, 12500, 25000, 50000, 100000, 300000, 500000];
     const labels = [];
     let from;
@@ -198,16 +198,16 @@ export default function viewMap() {
       }
     }
 
-    div.innerHTML = labels.join("<br>");
+    div.innerHTML = labels.join('<br>');
     return div;
   };
 
   legend.addTo(map);
 
-  const globalStat = L.control({ position: "bottomleft" });
+  const globalStat = L.control({position: 'bottomleft'});
 
   globalStat.onAdd = function () {
-    const div = L.DomUtil.create("div", "info global-stat");
+    const div = L.DomUtil.create('div', 'info global-stat');
     const globalNewConfirmed = properties.apiData.Global.NewConfirmed;
     const globalNewDeaths = properties.apiData.Global.NewDeaths;
     const globalNewRecovered = properties.apiData.Global.NewRecovered;

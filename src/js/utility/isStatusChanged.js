@@ -1,4 +1,4 @@
-import properties from "../properties";
+import properties from '../properties';
 
 // check is properties period || region values changed
 export default function () {

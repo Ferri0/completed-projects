@@ -1,5 +1,5 @@
-import properties from "../properties";
-import fixApiValue from "./fixApiValue";
+import properties from '../properties';
+import fixApiValue from './fixApiValue';
 
 function getPopulation(country) {
   const currentCountry = properties.apiDataCountries.find((e) => {
@@ -13,9 +13,9 @@ export default function () {
   const result = properties.apiData.Countries.map((e) => {
     const temp = getPopulation(e.Country);
     e.population = temp.population;
-    const flag = document.createElement("img");
+    const flag = document.createElement('img');
     flag.src = temp.flag;
-    flag.classList.add("stats__table--flag");
+    flag.classList.add('stats__table--flag');
     e.flag = flag;
     return e;
   });

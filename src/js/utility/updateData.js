@@ -1,8 +1,8 @@
-import properties from "../properties";
-import isStatusChanged from "./isStatusChanged";
-import updateCounter from "../tables_utility/updateCounter";
-import setTable from "../tables_utility/setTable";
-import chart from "../chart/chart";
+import properties from '../properties';
+import isStatusChanged from './isStatusChanged';
+import updateCounter from '../tables_utility/updateCounter';
+import setTable from '../tables_utility/setTable';
+import chart from '../chart/chart';
 
 /*
  * run this each time any property of page changes,
@@ -22,8 +22,8 @@ export default (function () {
       isStatusChanged() ||
       prevCasesTableUnits !== properties.casesTable.units
     ) {
-      updateCounter("cases");
-      setTable("cases");
+      updateCounter('cases');
+      setTable('cases');
       prevCasesTableUnits = properties.casesTable.units;
     }
 
@@ -32,8 +32,8 @@ export default (function () {
       isStatusChanged() ||
       prevDeathsTableUnits !== properties.deathsTable.units
     ) {
-      updateCounter("deaths");
-      setTable("deaths");
+      updateCounter('deaths');
+      setTable('deaths');
       prevDeathsTableUnits = properties.deathsTable.units;
     }
 
@@ -42,15 +42,15 @@ export default (function () {
       isStatusChanged() ||
       prevRecoveredTableUnits !== properties.recoveredTable.units
     ) {
-      updateCounter("recovered");
-      setTable("recovered");
+      updateCounter('recovered');
+      setTable('recovered');
       prevRecoveredTableUnits = properties.recoveredTable.units;
     }
 
     // set up last update date
-    const lastUpdateDate = document.querySelector(".last-update--date");
-    const lastUpdateTime = document.querySelector(".last-update--time");
-    if (lastUpdateDate.innerText === "") {
+    const lastUpdateDate = document.querySelector('.last-update--date');
+    const lastUpdateTime = document.querySelector('.last-update--time');
+    if (lastUpdateDate.innerText === '') {
       lastUpdateDate.innerText = properties.apiData.Date.slice(0, 10);
       lastUpdateTime.innerText = properties.apiData.Date.slice(11, -1);
     }

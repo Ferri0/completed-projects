@@ -1,12 +1,12 @@
-import { Grid } from "ag-grid-community";
-import properties from "../properties";
+import {Grid} from 'ag-grid-community';
+import properties from '../properties';
 
 // run each time when need to change table data
 // get table class of table needed to change
 export default function (tableClass) {
   // clear previous table data
   const currentTable = document.querySelector(`.stats__table--${tableClass}`);
-  currentTable.innerHTML = "";
+  currentTable.innerHTML = '';
 
   // set table depends on argument passed
   // first column same for all tables
@@ -15,15 +15,15 @@ export default function (tableClass) {
       cellRenderer: function (params) {
         return params.value;
       },
-      headerName: "",
-      field: "flag",
+      headerName: '',
+      field: 'flag',
       sortable: false,
       lockPosition: true,
       flex: 0.2,
     },
     {
-      headerName: "Country",
-      field: "Country",
+      headerName: 'Country',
+      field: 'Country',
       sortable: true,
       lockPosition: true,
       flex: 1.4,
@@ -33,15 +33,15 @@ export default function (tableClass) {
   // define table variables to define them from blocks
   let eGridDiv;
   let rowData;
-  if (properties[`${tableClass}Table`].units !== "absolute") {
+  if (properties[`${tableClass}Table`].units !== 'absolute') {
     // set empty tables if selected country
-    if (properties.region !== "World") {
-      columnDefs[0].field = "----";
-      columnDefs[0].headerName = "----";
+    if (properties.region !== 'World') {
+      columnDefs[0].field = '----';
+      columnDefs[0].headerName = '----';
       columnDefs[0].sortable = false;
       columnDefs.push({
-        headerName: "----",
-        field: "----",
+        headerName: '----',
+        field: '----',
         sortable: false,
         lockPosition: true,
         flex: 1,
@@ -51,69 +51,69 @@ export default function (tableClass) {
     }
 
     // set cases table
-    else if (tableClass === "cases") {
+    else if (tableClass === 'cases') {
       const fieldName =
-        properties.period === "All time" ? "TotalConfirmedR" : "NewConfirmedR";
+        properties.period === 'All time' ? 'TotalConfirmedR' : 'NewConfirmedR';
       columnDefs.push({
-        headerName: "Cases",
+        headerName: 'Cases',
         field: fieldName,
         sortable: true,
         lockPosition: true,
         flex: 1,
       });
-      columnDefs[1].cellClass = "stats__table--countries-column";
-      columnDefs[2].cellClass = "stats__table--cases-column";
-      eGridDiv = document.querySelector(".stats__table--cases");
+      columnDefs[1].cellClass = 'stats__table--countries-column';
+      columnDefs[2].cellClass = 'stats__table--cases-column';
+      eGridDiv = document.querySelector('.stats__table--cases');
       rowData = properties.apiDataRelative;
     }
 
     // set deaths table
-    else if (tableClass === "deaths") {
+    else if (tableClass === 'deaths') {
       const fieldName =
-        properties.period === "All time" ? "TotalDeathsR" : "NewDeathsR";
+        properties.period === 'All time' ? 'TotalDeathsR' : 'NewDeathsR';
       columnDefs.push({
-        headerName: "Deaths",
+        headerName: 'Deaths',
         field: fieldName,
         sortable: true,
         lockPosition: true,
         flex: 1,
       });
-      columnDefs[1].cellClass = "stats__table--countries-column";
-      columnDefs[2].cellClass = "stats__table--deaths-column";
-      eGridDiv = document.querySelector(".stats__table--deaths");
+      columnDefs[1].cellClass = 'stats__table--countries-column';
+      columnDefs[2].cellClass = 'stats__table--deaths-column';
+      eGridDiv = document.querySelector('.stats__table--deaths');
       rowData = properties.apiDataRelative;
     }
 
     // set recovered table
-    else if (tableClass === "recovered") {
+    else if (tableClass === 'recovered') {
       const fieldName =
-        properties.period === "All time" ? "TotalRecoveredR" : "NewRecoveredR";
+        properties.period === 'All time' ? 'TotalRecoveredR' : 'NewRecoveredR';
       columnDefs.push({
-        headerName: "Recovered",
+        headerName: 'Recovered',
         field: fieldName,
         sortable: true,
         lockPosition: true,
         flex: 1,
       });
-      columnDefs[1].cellClass = "stats__table--countries-column";
-      columnDefs[2].cellClass = "stats__table--recovered-column";
-      eGridDiv = document.querySelector(".stats__table--recovered");
+      columnDefs[1].cellClass = 'stats__table--countries-column';
+      columnDefs[2].cellClass = 'stats__table--recovered-column';
+      eGridDiv = document.querySelector('.stats__table--recovered');
       rowData = properties.apiDataRelative;
     }
 
     // throw error on wrong argument
     else {
-      throw new Error("wron argument passed to setTable function");
+      throw new Error('wron argument passed to setTable function');
     }
   } else {
     // set empty tables if selected country
-    if (properties.region !== "World") {
-      columnDefs[0].field = "----";
-      columnDefs[0].headerName = "----";
+    if (properties.region !== 'World') {
+      columnDefs[0].field = '----';
+      columnDefs[0].headerName = '----';
       columnDefs[0].sortable = false;
       columnDefs.push({
-        headerName: "----",
-        field: "----",
+        headerName: '----',
+        field: '----',
         sortable: false,
         lockPosition: true,
         flex: 1,
@@ -123,59 +123,59 @@ export default function (tableClass) {
     }
 
     // set cases table
-    else if (tableClass === "cases") {
+    else if (tableClass === 'cases') {
       const fieldName =
-        properties.period === "All time" ? "TotalConfirmed" : "NewConfirmed";
+        properties.period === 'All time' ? 'TotalConfirmed' : 'NewConfirmed';
       columnDefs.push({
-        headerName: "Cases",
+        headerName: 'Cases',
         field: fieldName,
         sortable: true,
         lockPosition: true,
         flex: 1,
       });
-      columnDefs[1].cellClass = "stats__table--countries-column";
-      columnDefs[2].cellClass = "stats__table--cases-column";
-      eGridDiv = document.querySelector(".stats__table--cases");
+      columnDefs[1].cellClass = 'stats__table--countries-column';
+      columnDefs[2].cellClass = 'stats__table--cases-column';
+      eGridDiv = document.querySelector('.stats__table--cases');
       rowData = properties.apiDataRelative;
     }
 
     // set deaths table
-    else if (tableClass === "deaths") {
+    else if (tableClass === 'deaths') {
       const fieldName =
-        properties.period === "All time" ? "TotalDeaths" : "NewDeaths";
+        properties.period === 'All time' ? 'TotalDeaths' : 'NewDeaths';
       columnDefs.push({
-        headerName: "Deaths",
+        headerName: 'Deaths',
         field: fieldName,
         sortable: true,
         lockPosition: true,
         flex: 1,
       });
-      columnDefs[1].cellClass = "stats__table--countries-column";
-      columnDefs[2].cellClass = "stats__table--deaths-column";
-      eGridDiv = document.querySelector(".stats__table--deaths");
+      columnDefs[1].cellClass = 'stats__table--countries-column';
+      columnDefs[2].cellClass = 'stats__table--deaths-column';
+      eGridDiv = document.querySelector('.stats__table--deaths');
       rowData = properties.apiDataRelative;
     }
 
     // set recovered table
-    else if (tableClass === "recovered") {
+    else if (tableClass === 'recovered') {
       const fieldName =
-        properties.period === "All time" ? "TotalRecovered" : "NewRecovered";
+        properties.period === 'All time' ? 'TotalRecovered' : 'NewRecovered';
       columnDefs.push({
-        headerName: "Recovered",
+        headerName: 'Recovered',
         field: fieldName,
         sortable: true,
         lockPosition: true,
         flex: 1,
       });
-      columnDefs[1].cellClass = "stats__table--countries-column";
-      columnDefs[2].cellClass = "stats__table--recovered-column";
-      eGridDiv = document.querySelector(".stats__table--recovered");
+      columnDefs[1].cellClass = 'stats__table--countries-column';
+      columnDefs[2].cellClass = 'stats__table--recovered-column';
+      eGridDiv = document.querySelector('.stats__table--recovered');
       rowData = properties.apiDataRelative;
     }
 
     // throw error on wrong argument
     else {
-      throw new Error("wron argument passed to setTable function");
+      throw new Error('wron argument passed to setTable function');
     }
   }
 

@@ -4,11 +4,11 @@
     [
       "@babel/plugin-transform-runtime",
       {
-    "regenerator": true
+        "regenerator": true
       }
     ]
   ],
-  
+
   "presets": [
     [
       "@babel/preset-env",

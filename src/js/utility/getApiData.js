@@ -1,9 +1,9 @@
-import setDropdowns from "../components/setDropdowns";
-import properties from "../properties";
+import setDropdowns from '../components/setDropdowns';
+import properties from '../properties';
 
 export default async function getApiData() {
   async function getCovidData() {
-    const url = "https://api.covid19api.com/summary";
+    const url = 'https://api.covid19api.com/summary';
     const response = await fetch(url);
     const data = await response.json();
     return data;
@@ -11,7 +11,7 @@ export default async function getApiData() {
 
   async function getCountriesData() {
     const url =
-      "https://restcountries.eu/rest/v2/all?fields=name;population;flag";
+      'https://restcountries.eu/rest/v2/all?fields=name;population;flag';
     const response = await fetch(url);
     const data = await response.json();
     return data;
@@ -21,7 +21,7 @@ export default async function getApiData() {
   properties.apiDataCountries = await getCountriesData();
 
   // create countries array with default first element World
-  const countries = ["World"];
+  const countries = ['World'];
   for (let i = 0; i < properties.apiData.Countries.length; i += 1) {
     countries[i + 1] = properties.apiData.Countries[i].Country;
   }

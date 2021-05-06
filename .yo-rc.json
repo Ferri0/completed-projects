@@ -55,9 +55,7 @@
             ]
           },
           "optimization": {
-            "minimizer": [
-              "new TerserPlugin()"
-            ],
+            "minimizer": ["new TerserPlugin()"],
             "splitChunks": {
               "cacheGroups": {
                 "vendors": {

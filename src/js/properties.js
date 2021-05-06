@@ -4,16 +4,16 @@ export default {
   apiData: null,
   apiDataCountries: null,
   apiDataRelative: null,
-  region: "World",
-  period: "All time",
-  graphDisplay: "cases",
+  region: 'World',
+  period: 'All time',
+  graphDisplay: 'cases',
   casesTable: {
-    units: "absolute",
+    units: 'absolute',
   },
   deathsTable: {
-    units: "absolute",
+    units: 'absolute',
   },
   recoveredTable: {
-    units: "absolute",
+    units: 'absolute',
   },
 };
