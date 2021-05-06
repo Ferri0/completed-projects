@@ -2,11 +2,11 @@ import properties from '../properties';
 import fixApiValue from './fixApiValue';
 
 function getPopulation(country) {
-  const currentCountry = properties.apiDataCountries.find((e) => {
+  const population = properties.apiDataCountries.find((e) => {
     if (fixApiValue(country) === e.name) return e;
     return null;
   });
-  return currentCountry;
+  return population || country;
 }
 
 export default function () {

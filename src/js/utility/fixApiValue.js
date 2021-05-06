@@ -69,5 +69,5 @@ export default function (country) {
     }
     return null;
   });
-  return populationArray.name;
+  return populationArray?.name;
 }
