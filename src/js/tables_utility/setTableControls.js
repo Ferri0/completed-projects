@@ -18,7 +18,7 @@ export default function (table) {
 
   // append arrow img to left button
   const arrowImgLeft = document.createElement('img');
-  arrowImgLeft.src = './img/arrow.svg';
+  arrowImgLeft.src = './icons/arrow.svg';
   arrowImgLeft.alt = 'arrow-left';
   statsControlsLeft.append(arrowImgLeft);
 
@@ -46,7 +46,7 @@ export default function (table) {
 
   // append arrow img to right button
   const arrowImgRight = document.createElement('img');
-  arrowImgRight.src = './img/arrow.svg';
+  arrowImgRight.src = './icons/arrow.svg';
   arrowImgRight.alt = 'arrow-right';
   statsControlsRight.append(arrowImgRight);
 
