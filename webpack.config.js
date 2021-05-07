@@ -11,7 +11,6 @@ module.exports = {
   entry: {
     main: path.resolve(__dirname, './src/js/app.js'),
   },
-  watch: true,
 
   output: {
     path: path.resolve(__dirname, './dist'),
